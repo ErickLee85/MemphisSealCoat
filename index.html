@@ -9,20 +9,21 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aec8d5c56a.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Memphis Sealcoat LLC</title>
 </head>
 <body>
             
-    <nav>
+    <nav  id="home">
         <div class="topnav" id="theTopNav">
             <i class="fa-solid fa-bars-staggered faMenu"></i>
-            <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="120" width="150" class="logo">
+            <a href="#"><img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="120"  width="150" class="logo" style="cursor: pointer;" ></a>
             <ul class="mainLinks" id="theMainLinks">
-                <li class="mainLink"><a href="#home" class="active">Home</a></li>
-                <li class="mainLink"><a href="">About</a></li>
-                <li class="mainLink"><a href="">Services</a></li>
+                <li class="mainLink"><a href="#" class="active">Home</a></li>
+                <li class="mainLink"><a href="#about">About</a></li>
+                <li class="mainLink"><a href="#services">Services</a></li>
                 <li class="mainLink"><a href="">Testimonials</a></li>
-                <li class="mainLink"><a href="">Portfolio</a></li>
+                <li class="mainLink"><a href="#portfolio">Gallery</a></li>
                 <li class="mainLink"><a href="">Contact</a></li>
             </ul>
             <div class="contact">
@@ -34,31 +35,164 @@
         </div>
     </nav>
     <div class="sideNav">
+        
+        <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="200"  width="260" class="logo" >
         <ul class="sideLinks">
-            <li><a href=""><i class="fa-solid fa-home"></i>Home</a></li>
-            <li><a href=""><i class="fa-solid fa-user"></i>About</a></li>
-            <li><a href=""><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li><a href=""><i class="fa-solid fa-quote-left"></i>Testimonials</a></li>
-            <li><a href=""><i class="fa-solid fa-list-check"></i>Portfolio</a></li>
-            <li><a href=""><i class="fa-solid fa-comment"></i>Contact</a></li>
+            <li class="sideLink"><a href="#home"><i class="fa-solid fa-home"></i>Home</a></li>
+            <li class="sideLink"><a href="#about"><i class="fa-solid fa-user"></i>About</a></li>
+            <li class="sideLink"><a href="#services"><i class="fa-solid fa-briefcase"></i>Services</a></li>
+            <li class="sideLink"><a href=""><i class="fa-solid fa-quote-left"></i>Testimonials</a></li>
+            <li class="sideLink"><a href="#portfolio"><i class="fa-solid fa-images"></i>Gallery</a></li>
+            <li class="sideLink"><a href=""><i class="fa-solid fa-comment"></i>Contact</a></li>
         </ul>
         <div class="closeButton">
             <i class="fa-solid fa-xmark"></i>
         </div>
     </div>
 
-    <div class="heroSection" >
-        <h1>Seal Coating Excellence In Memphis, TN</h1>
+    <div class="heroSection">
+        <h1>Seal Coating in Memphis, TN</h1>
         <h3>Crack Filling, Pothole Repair, Line Striping, Asphalt Repair, Preventitive Maintenance & Much More!</h3>
-        <video autoplay loop muted plays-inline class="heroVideo">
+        <video autoplay muted loop class="heroVideo">
             <source src="./assets/drone_vid.mp4" type="video/mp4">
         </video>
+        <button >Get Quote <i class="fa-solid fa-clipboard" style="margin-left: 10px;"></i></button>
     </div>
 
-    
+<div class="aboutSection" id="about">
+    <div class="aboutText">
+        <h1><span class="companyName">About </span>Memphis Sealcoat</h1>
+     
+        <p>Our seal coating company aims to provide high-quality, professional
+            sealcoating services to residential and commercial clients in the Memphis, TN,
+            area. Our services will help extend the life of asphalt surfaces, protect them
+            from damage, and enhance their appearance. Our experienced team,
+            state-of-the-art equipment, and commitment to customer satisfaction will set
+            us apart from competitors and drive our growth in the market.</p>
+            <button onclick="aboutFunction()">Learn More</button>
+    </div>
+    <div class="aboutImage">
+        <!-- <img src="./assets/drone_img.JPG" height="400" width="400" style="object-fit: cover;" alt=""> -->
+        <iframe
+        width="600"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1fimdALRPcsY
+            &q=Memphis+TN">
+        </iframe>
+    </div>
+</div>
+
+
+<section class="serviceContainer" id="services">
+    <h1>Our Services</h1>
+
+    <section class="card__container">
+  
+      <!--==================== SERVICE CARD ====================-->
+      <div class="card__bx card__1">
+        <div class="card__data">
+          <div class="card__icon">
+            <div class="card__icon-bx">
+              <i class="fa-solid fa-road"></i>
+            </div>
+          </div>
+          <div class="card__content">
+            <h3>Seal Coating</h3>
+            <p>The primary service, involving the application of a protective coating to asphalt pavements to shield them from the damaging effects of water, oils, and UV light.</p>
+            <a href="./services.html">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="card__bx card__2">
+        <div class="card__data">
+          <div class="card__icon">
+            <div class="card__icon-bx"><i class="fa-solid fa-fill"></i></div>
+          </div>
+          <div class="card__content">
+            <h3>Crack Filling</h3>
+            <p>Sealing cracks in the pavement to prevent water from entering and causing further damage.</p>
+            <br>
+            <a href="./services.html">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="card__bx card__3">
+        <div class="card__data">
+          <div class="card__icon">
+            <div class="card__icon-bx"><i class="fa-solid fa-hammer"></i></div>
+          </div>
+          <div class="card__content">
+            <h3>Pothole Repair</h3>
+            <p>Filling and repairing potholes to restore the surface integrity and safety of the pavement.</p>
+            <br>
+            <a href="./services.html">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+   <a href="./services.html"> <button>See More Services <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button></a>
+  </section>
+
+
+<div class="galleryContainer" id="portfolio">
+    <h1>Image Gallery <i class="fa-solid fa-images" style="margin-left: 10px;"></i></h1>
+    <section class="gallery">
+        <div>
+          <article>
+            <img src="./assets/img_1.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>12 Likes</div> -->
+          </article>
+          <article>
+            <img src="./assets/img_4.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>23 Likes</div> -->
+          </article>
+          <article>
+            <img src="./assets/img_5.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>6 Likes</div> -->
+          </article>
+      
+        </div>
+        <div>
+          <article>
+            <img src="./assets/img_2.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>22 Likes</div> -->
+          </article>
+          <article>
+            <img src="./assets/img_8.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>18 Likes</div> -->
+          </article>
+          <article>
+            <img src="./assets/img_6.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>145 Likes</div> -->
+          </article>
+      
+        </div>
+        <div>
+          <article>
+            <img src="./assets/img_7.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>145 Likes</div> -->
+          </article>
+          <article>
+            <img src="./assets/img_3.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>98 Likes</div> -->
+          </article>
+          <article>
+            <img src="./assets/img_4.JPG" alt="image">
+            <!-- <div><span class="material-symbols-outlined material-fill-1">favorite</span>37 Likes</div> -->
+          </article>
+      
+        </div>
+      
+      </section>
+        
+</div>
 
     
-
+        <div class="overlay"></div>
       <script   src="./index.js"></script>
     
 </body>
