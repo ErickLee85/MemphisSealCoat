@@ -185,7 +185,7 @@ nav {
    flex-direction: row;
    justify-content: flex-start;
    gap:30px;
-   margin-top: 10px;
+   margin-top: 40px;
    padding:10px;
    padding-inline: 45px;
    font-weight: 600;
@@ -222,7 +222,7 @@ nav {
    max-height:1000px;
    object-fit: cover;
    z-index: -10;
-   filter: brightness(0.5);
+   filter: brightness(0.3);
 }
 
 .heroSection {
@@ -357,6 +357,7 @@ nav {
 .bottom p {
    color: rgb(190, 190, 190);
    max-width: 700px;
+   font-weight: 500;
 }
 
 
@@ -371,12 +372,14 @@ nav {
    cursor: pointer;
    letter-spacing: 1px;
    transition: 300ms ease;
+   border: 2px solid goldenrod;
    background-color: goldenrod;
-   transition: 300ms ease-in-out;
+   transition: 500ms ease-in-out;
 }
 
 .bottom button:hover {
-   transform: translateY(-10px);
+   color: goldenrod;
+   background-color: black;
 }
 
 .aboutImage iframe {
@@ -713,7 +716,7 @@ nav {
    width: 100%;
    height:400px;
    background-color: rgb(0, 0, 0);
-   padding:40px;
+   padding:30px;
    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
    display: flex;
    justify-content: center;
@@ -725,14 +728,14 @@ nav {
 }
 
 .bottomText {
-   background-color: #028DD1;
+   background:linear-gradient(to bottom right, #028DD1, violet);
    clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
    margin-top: -60px;
    height:500px;
    display: flex;
    justify-content: center;
    align-items: center;
-   padding:20px;
+   padding:30px;
 
   
 }
@@ -788,9 +791,13 @@ footer {
 
 .browseLinks {
    width:50%;
-   border-left: 2px solid white;
+   border-right: 2px solid white;
    height:200px;
    padding-left: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
 
 .browseLinks h3 {
@@ -811,13 +818,22 @@ footer {
    justify-content: flex-start ;
    gap:15px;
    padding-bottom: 5px;
-   color: rgb(217, 217, 217);
+   color: rgb(162, 162, 162);
+   transition:300ms ease;
+}
+
+.browseLinks .linkHolder li a:hover {
+   color: white;
 }
 
 .contactInfo {
    width:50%;
    height:200px;
    padding-right: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
 
 .contactInfo h3 {
