@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Contact Us</h2>
+<form action="#" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="businessAddress">Business Address:</label>
+    <textarea id="businessAddress" name="businessAddress" rows="4" required></textarea>
+    
+    <label for="cityState">City, State:</label>
+    <input type="text" id="cityState" name="cityState" required>
+    
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+    
+    <label for="dateTime">Date and Time:</label>
+    <input type="datetime-local" id="dateTime" name="dateTime" required>
+    
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

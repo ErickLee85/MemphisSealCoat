@@ -32,6 +32,7 @@ nav {
    box-shadow:  0 0 15px rgba(0,0,0,0.2);
    border-bottom: 5px solid #028DD1;
    z-index: 50;
+   overflow: hidden;
 }
 
 
@@ -98,6 +99,15 @@ nav {
     text-decoration: underline;
   
  }
+
+
+
+ /* @media(max-width: 377px) {
+
+   .contact ul li:nth-child(2) {
+     display: none;
+   }
+ } */
  
  
  .lowerOpacity {
@@ -212,7 +222,7 @@ nav {
    max-height:1000px;
    object-fit: cover;
    z-index: -10;
-   filter: brightness(0.4);
+   filter: brightness(0.5);
 }
 
 .heroSection {
@@ -274,11 +284,9 @@ nav {
    }
 }
 
-.aboutSection {
-   height:750px;
-   width: 100%;
-   background-color: rgb(255, 255, 255);
-}
+
+
+
 
 @media(min-width:900px) {
    .heroSection h1 {
@@ -291,7 +299,28 @@ nav {
 }
 
 
-
+.top {
+   height: 175px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background:goldenrod;
+   clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),50% 100%,0 calc(100% - 50px));
+ }
+ .bottom {
+   height: 600px;
+   width: 100%;
+   background-color: black;
+   clip-path: polygon(0 0,50% 50px,100% 0,100% 100%,0 100%);
+   margin-top: -50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding:30px;
+   
+ }
 
 
 .aboutSection {
@@ -312,26 +341,27 @@ nav {
 
 }
 
-.aboutText .companyName {
+.top .companyName {
    -webkit-text-stroke: 0.5px #fff;
    letter-spacing: 2px;
    color: transparent;
+
 }
 
 
-.aboutText h1 {
+.top h1 {
    color: white;
+   font-size: 1.5rem;
 }
 
-.aboutText p {
-   margin-top: 25px;
+.bottom p {
    color: rgb(190, 190, 190);
-   max-width: 500px;
+   max-width: 700px;
 }
 
 
 
-.aboutText button {
+.bottom button {
    padding:10px 25px;
    font-weight: 700;
    outline: none;
@@ -345,7 +375,7 @@ nav {
    transition: 300ms ease-in-out;
 }
 
-.aboutText button:hover {
+.bottom button:hover {
    transform: translateY(-10px);
 }
 
@@ -353,6 +383,12 @@ nav {
    box-shadow:
     -50px -50px 0 -40px goldenrod,
     50px 50px 0 -40px goldenrod;
+}
+
+@media(min-width: 750px) {
+   .top h1 {
+      font-size: 2.5rem;
+   }
 }
 
 @media(max-width: 1407px) {
@@ -374,6 +410,8 @@ nav {
    }
 }
 
+
+
 @media screen and (min-width: 676px) and (max-width: 1407px) {
    .aboutText {
       display: flex;
@@ -392,14 +430,14 @@ nav {
    min-height: 100vh;
    display: grid;
    place-items: center;
-   background-color: #282828;
+   background-color: rgb(245, 245, 245);
    z-index: -10;
 }
 
 .serviceContainer h1 {
    font-size: 2.8rem;
    text-transform: uppercase;
-   color: white;
+   color: rgb(0, 0, 0);
 }
 
 .serviceContainer button {
@@ -407,7 +445,7 @@ nav {
    font-weight: 700;
    outline: none;
    border:none;
-   box-shadow: 0 0 20px rgba(0,0,0,0.2);
+   box-shadow: 0 0 20px rgba(0,0,0,0.6);
    margin-top: 35px;
    cursor: pointer;
    letter-spacing: 1px;
@@ -652,5 +690,57 @@ nav {
 .gallery>div>article:hover {
    background-color: rgb(0, 0, 0);
    color: #FFF;
+}
+
+
+.theProcess {
+   min-height: 100vh;
+   background-color: #000000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.theProcess img {
+   object-fit: cover;
+   width: 100vw;
+   max-width: 800px;
+   height: 100%;
+}
+
+
+.topTitle {
+   width: 100%;
+   height:400px;
+   background-color: rgb(0, 0, 0);
+   padding:40px;
+   clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   font-size: 2.8rem;
+   font-weight: 700;
+   color: white;
+}
+
+.bottomText {
+   background-color: #028DD1;
+   clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
+   margin-top: -60px;
+   height:500px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding:20px;
+
+  
+}
+
+.bottomText p {
+   font-size: 14px;
+   max-width: 500px;
+   height:auto;
+   font-weight: 500;
 }
 

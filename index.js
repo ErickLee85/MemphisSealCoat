@@ -58,3 +58,17 @@ const aboutFunction = () => {
 const scrollHome = () => {
     alert('clicked!')
 }
+
+
+// const observer = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if(entry.isIntersecting) {
+//           document.getElementById('home').style.borderBottom = '5px solid goldenrod';
+//         } if(!entry.isIntersecting){
+//             document.getElementById('home').style.borderBottom = '5px solid #028DD1;';
+//         }
+//     });
+//   });
+  
+//   const companyInfo = document.querySelectorAll('.top');
+//   companyInfo.forEach((element) => observer.observe(element));
