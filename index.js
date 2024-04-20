@@ -3,6 +3,7 @@ const menuIcon = document.querySelector('.faMenu');
 const sideNav = document.querySelector('.sideNav')
 const overlay = document.querySelector('.overlay');
 const closeSideNav = document.querySelector('.closeButton');
+const hiddenElements = document.querySelectorAll('.hidden');
 var links = document.querySelectorAll(".sideNav li");
 var mainLinks = document.querySelectorAll('.mainLinks li a');
 
@@ -58,6 +59,16 @@ const aboutFunction = () => {
 const scrollHome = () => {
     alert('clicked!')
 }
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry)=> {
+        if(entry.intersectionRatio > 0) {
+            entry.target.classList.add('show');
+        }
+    })
+})
+
+hiddenElements.forEach((element) => observer.observe(element));
 
 
 // const observer = new IntersectionObserver((entries) => {
