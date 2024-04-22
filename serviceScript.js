@@ -12,81 +12,22 @@ var bottomLinks = document.querySelectorAll('.linkHolder li a')
 mainLinks.forEach(function(link) {
     link.addEventListener('click', function(event) {
         var hrefValue = this.getAttribute('href');
-      
-        event.preventDefault();
-        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html') {
             window.location.href = hrefValue;
-        }
-        var targetElement = document.querySelector(hrefValue);
-        var offset = targetElement.offsetTop - 85; 
-        
-        // Scroll to the target element with offset
-        window.scrollTo({
-            top: offset,
-            behavior: 'smooth' // Optional: Smooth scrolling
-        });
-        mainLinks.forEach(function(link) {
-            if (link !== this) { // Skip if it's the clicked link
-                link.classList.remove('active');
-            }
-        });
 
-        // Add the 'active' class to the clicked link
-        this.classList.add('active');
     });
 });
 
 sideLinks.forEach(function(link) {
     link.addEventListener('click', function(event) {
         var hrefValue = this.getAttribute('href');
-      
-        event.preventDefault();
-        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html') {
             window.location.href = hrefValue;
-        }
-        var targetElement = document.querySelector(hrefValue);
-        var offset = targetElement.offsetTop - 85; 
-        
-        // Scroll to the target element with offset
-        window.scrollTo({
-            top: offset,
-            behavior: 'smooth' // Optional: Smooth scrolling
-        });
-        mainLinks.forEach(function(link) {
-            if (link !== this) { // Skip if it's the clicked link
-                link.classList.remove('active');
-            }
-        });
-
-        // Add the 'active' class to the clicked link
-        this.classList.add('active');
     });
 });
 
 bottomLinks.forEach(function(link) {
     link.addEventListener('click', function(event) {
         var hrefValue = this.getAttribute('href');
-      
-        event.preventDefault();
-        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html') {
             window.location.href = hrefValue;
-        }
-        var targetElement = document.querySelector(hrefValue);
-        var offset = targetElement.offsetTop - 85; 
-        
-        // Scroll to the target element with offset
-        window.scrollTo({
-            top: offset,
-            behavior: 'smooth' // Optional: Smooth scrolling
-        });
-        mainLinks.forEach(function(link) {
-            if (link !== this) { // Skip if it's the clicked link
-                link.classList.remove('active');
-            }
-        });
-
-        // Add the 'active' class to the clicked link
-        this.classList.add('active');
     });
 });
 
