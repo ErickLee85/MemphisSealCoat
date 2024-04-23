@@ -14,7 +14,7 @@ mainLinks.forEach(function(link) {
         var hrefValue = this.getAttribute('href');
       
         event.preventDefault();
-        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html') {
+        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html' || hrefValue == 'gallery.html') {
             window.location.href = hrefValue;
         }
         var targetElement = document.querySelector(hrefValue);
@@ -41,7 +41,7 @@ sideLinks.forEach(function(link) {
         var hrefValue = this.getAttribute('href');
       
         event.preventDefault();
-        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html') {
+        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html' || hrefValue == 'gallery.html') {
             window.location.href = hrefValue;
         }
         var targetElement = document.querySelector(hrefValue);
@@ -68,7 +68,7 @@ bottomLinks.forEach(function(link) {
         var hrefValue = this.getAttribute('href');
       
         event.preventDefault();
-        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html') {
+        if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html' || hrefValue == 'gallery.html') {
             window.location.href = hrefValue;
         }
         var targetElement = document.querySelector(hrefValue);

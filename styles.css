@@ -243,8 +243,15 @@ nav {
 
 .heroSection .heroContainer h1 {
    color: rgb(255, 255, 255);
-   font-size: 2.8rem;
+   font-size: 3.5rem;
    text-align: left;
+}
+
+.heroSection .heroContainer h2 {
+   color: rgb(255, 255, 255);
+   font-size: 2.5rem;
+   text-align: left;
+
 }
 
 .heroSection .heroContainer h3 {

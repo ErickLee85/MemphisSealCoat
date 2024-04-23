@@ -14,86 +14,185 @@
 <body>
 
     <style>
+
+        body {
+            background-color: transparent;
+        }
     
 
        
-        .topContact h1 {
-            color: #028DD1;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
-            font-size: 3rem;
-             font-weight: 700;
-            text-align: center;
-        }
+         
 
-        .topContact h3 {
-            margin-top: 25px;
-            color:rgb(219, 219, 219);
-            font-size: 1rem;
-            text-align: center;
-            max-width: 300px;
-        }
-
-        .topContact {
-            clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
-            background-color: black;
-            width: 100%;
-            height:300px;
-            padding:20px;
-                display: grid;
-            place-content: center;
+          .mainDiv {
             position: relative;
-            }
-            .topContact img {
-                position: absolute;
-                top:0;
-                left:0;
-                right:0;
-                bottom:0;
-                width: 100%;
-                height: 100%;
-                z-index: -10;
-                filter: brightness(0.3);
-                object-fit: cover;
-               
-            }
-            .bottomContact {
-            clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
-            margin-top: -60px;
-            background-color: rgb(224, 224, 224);
+            min-height: 100vh;
             width: 100%;
-            min-height: 500px;
-            padding:20px;
+            margin-top: -50px;
+            clip-path: polygon(0 0,50% 50px,100% 0,100% 100%,0 100%);
+          }
+
+          .mainDiv img {
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            width: 100%;
+            filter: brightness(0.35);
+          }
+
+          .contactForm {
+            position: absolute;
+            top:70%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-direction: row;
+            gap:150px;
+            height:auto;
+
+          }
+
+          .mainDiv h3 {
+            color: rgb(211, 211, 211);
+            min-width: 300px;
+            max-width: 600px;
+            position: absolute;
+            top:20%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.25rem;
+
+          }
+
+          .contactForm {
+          margin:200px auto;
+          }
+
+      .contactForm .contactButtons {
+            min-width: 350px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+          }
+
+          .contactForm .contactButtons i {
+            height: 50px;
+            width: 50px;
+            background-color: white;
+            border-radius: 50%;
             display: grid;
-            place-content: center;
-            }
+            place-items: center;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+          }
 
-            .bottomContact h3 {
-                padding:5px 10px;
-                background-color: #028DD1;
-                color: white;
-            }
+      
 
-            /* HTML: <div class="tooltip">This is a Tooltip with a gradient or solid coloration and with border radius </div> */
-            .tooltip {
-            color: #fff;
-            font-size: 18px;
-            max-width: 28ch;
+          .holder {
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+          }
+
+          p {
+            color: white;
+            margin-left: 25px;
+            font-weight: 600;
+          }
+
+          .holder:nth-child(2) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+          }
+
+          .form-container {
+            max-width: 500px;
+            width: 400px;
+            padding: 50px 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+            .form-container h2 {
             text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #333;
             }
-            .tooltip {
-            --s: 1.5em; /* triangle size */
-            --r: 1em; /* the radius */
+            .form-group {
+            position: relative;
+            margin-bottom: 20px;
+            }
+            .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            }
+            .form-group label {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #777;
+            transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+            }
+            .form-group input:focus {
+            border-color: rgb(38, 169, 230);
+            outline: none;
+            }
+            .form-group input:focus + label,
+            .form-group input:not(:placeholder-shown) + label {
+            top: -6px;
+            font-size: 12px;
+            color: rgb(38, 169, 230);
+            background-color: #ffffff;
+            padding: 0 4px;
+            border-radius: 4px;
+            left: 8px;
+            }
+            .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            }
+            .submit-button:hover {
+            background-color: #0056b3;
+            }
 
-            padding: 1em;
-            border: var(--s) solid #0000;
-            border-radius: calc(var(--r) + var(--s));
-            border-top-left-radius: 0;
-            background: border-box linear-gradient(-30deg,violet, #028DD1); /* the coloration */
-            -webkit-mask:
-                radial-gradient(100% 100% at 100% 0,#0000 99%,#000 102%) 
-                var(--s) 0/var(--s) var(--s) no-repeat border-box,
-                linear-gradient(#000 0 0) padding-box;
+            @media(max-width:1145px) {
+
+                .mainDiv {
+                    height: 1500px;
+                }
+
+                .mainDiv h3 {
+                    top:10%;
+                    min-width: 350px;
+                }
+                .contactForm {
+                    flex-direction: column;
+                    margin-top: 325px;
+                    gap:50px;
+
+                }
+
+           
             }
+        
+        
+          
    
     </style>
             
@@ -103,10 +202,10 @@
             <a href="./index.html"><img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="120"  width="150" class="logo" ></a>
             <ul class="mainLinks" id="theMainLinks">
                 <li class="mainLink"><a href="index.html#home" >Home</a></li>
-                <li class="mainLink"><a href="index.html#about" >About</a></li>
-                <li class="mainLink"><a href="index.html#services">Services</a></li>
+                <li class="mainLink"><a href="about.html" >About</a></li>
+                <li class="mainLink"><a href="services.html">Services</a></li>
                 <li class="mainLink"><a href="index.html#process">Process</a></li>
-                <li class="mainLink"><a href="">Gallery</a></li>
+                <li class="mainLink"><a href="gallery.html">Gallery</a></li>
                 <li class="mainLink"><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="contact">
@@ -122,33 +221,83 @@
         <!-- <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="200"  width="260" class="logo" > -->
         <ul class="sideLinks">
             <li class="sideLink"><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
-            <li class="sideLink"><a href="index.html#about"><i class="fa-solid fa-user"></i>About</a></li>
-            <li class="sideLink"><a href="index.html#services"><i class="fa-solid fa-briefcase"></i>Services</a></li>
+            <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+            <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
             <li class="sideLink"><a href="index.html#process"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
-            <li class="sideLink"><a href=""><i class="fa-solid fa-list-check"></i>Gallery</a></li>
-            <li class="sideLink"><a href=""><i class="fa-solid fa-comment"></i>Contact</a></li>
+            <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-list-check"></i>Gallery</a></li>
+            <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
         </ul>
         <div class="closeButton">
             <i class="fa-solid fa-xmark"></i>
         </div>
     </div>
 
-    <!-- <section class="banner">
-        <h1>Contact Us Today for your FREE Quote</h1>
-    </section> -->
-    <div class="topContact">
-        <img src="./assets/roads_transparent.png" alt="roads">
-        <h1>Contact</h1>
-        <h3>Contact us with all your seal coating questions.</h3>
-        
-    </div>
-    <div class="bottomContact">
-        <div class="tooltip">Tell us about your project!</div>
+    <div class="top">
+        <h1><span class="companyName">Contact</span></h1>
     </div>
 
 
-    
-   
+
+    <div class="mainDiv">
+        <img src="./assets/memphis-min.jpeg" alt="memphis">
+        <h3>  
+            Get Started Today! Fill out the form below for a free, no-obligation quote.   
+    </h3>
+       
+    </div>
+
+    <div class="contactForm">
+          
+        <div class="contactButtons">
+            <div class="holder">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <p style="color: rgb(38, 169, 230);">Address</p>
+                    <p>1138 N Germantown PKWY</p>
+                      <p> Suite 101 PMB 145</p>
+                </div>
+            </div>
+            <div class="holder">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <p style="color: rgb(38, 169, 230);">Phone</p>
+                   <a href="tel:19016199897"> <p>(901)619-9897</p></a>
+                
+                </div>
+            </div>
+            <div class="holder">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <p style="color: rgb(38, 169, 230);">Email</p>
+                   <a href="mailto:Nick@memphissealcoat.com"> <p>Nick@memphissealcoat.com</p></a>
+                
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+           <form action="">
+            <h2>Get Free Quote</h2>
+            <div class="form-group">
+              <input type="text" placeholder=" " id="name" required>
+              <label for="name">Full name</label>
+            </div>
+      
+            <div class="form-group">
+              <input type="email" placeholder=" " id="inputField" required>
+              <label for="inputField">Email Address</label>
+            </div>
+            <div class="form-group">
+              <input type="number" placeholder=" " id="number" required>
+              <label for="number">Phone</label>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder=" " id="message" required>
+                <label for="message">Message</label>
+              </div>
+            <button class="submit-button" type="submit">Send<i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
+           </form>
+          </div>
+    </div>
 
 
       <footer>
@@ -157,11 +306,11 @@
         <div class="linkHolder">
           <ul>
             <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
-            <li><a href="index.html#about"><i class="fa-solid fa-user"></i>About</a></li>
-            <li><a href="index.html#services"><i class="fa-solid fa-briefcase"></i>Services</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
             <li><a href="index.html#process"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
-            <li><a href=""><i class="fa-solid fa-comment"></i>Contact</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
             
           </ul>
         </div>
@@ -184,6 +333,8 @@
 
     
         <div class="overlay"></div>
+        
+        
         <script   src="./serviceScript.js"></script>
     
 </body>
