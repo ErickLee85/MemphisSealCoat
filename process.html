@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aec8d5c56a.js" crossorigin="anonymous"></script>
+    <title>Memphis Sealcoat LLC</title>
+
+    <style>
+
+        body {
+            background:rgb(6, 27, 87);
+        }
+
+        .titleContainer {
+            padding:10px;
+            max-width: 600px;
+            margin:0px auto;
+        }
+
+
+        .titleContainer p {
+            margin-top: 25px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin:100px auto;
+        }
+
+        .timeline-container {
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes movedown {
+            0% {
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .timeline-container:nth-child(1){
+            animation-delay: 0s;
+        }
+
+        .timeline-container:nth-child(2){
+            animation-delay: 1s;
+        }
+
+        .timeline-container:nth-child(3){
+            animation-delay: 2s;
+        }
+
+        .timeline-container:nth-child(4){
+            animation-delay: 3s;
+        }
+
+        .timeline-container:nth-child(5){
+            animation-delay: 4s;
+        }
+
+        .timeline-container:nth-child(6){
+            animation-delay: 5s;
+        }
+
+        .timeline-container:nth-child(7){
+            animation-delay: 6s;
+        }
+
+
+        .text-box {
+            padding:20px 30px;
+            background-color: #ffffff;
+            position: relative;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .text-box h2 {
+            font-weight: 600;
+        }
+
+        .text-box small {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .left-container {
+            left: 0;
+        }
+
+        .right-container {
+            left:50%;
+        }
+
+        .left-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top:35px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid white;
+            right: -15px;
+        }
+
+        .right-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top:35px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid white;
+            left: -15px;
+        }
+
+        .timeline-container i {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            right: -22px;
+            top:32px;
+            color: black;
+            font-size: 25px;
+            display: grid;
+            place-content: center;
+            z-index: 10;
+            background-color: white;
+        }
+
+      
+         
+
+        .right-container i {
+            left:-24px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background-color: white;
+            top:0;
+            left:50%;
+            margin-left: -4px;
+            z-index: -1;
+            animation: moveline 7s linear forwards;
+        }
+
+
+
+        @keyframes moveline {
+            0% {
+                height: 0;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+      
+   
+
+        
+        @media(max-width:600px) {
+            .timeline {
+                margin: 50px auto;
+            }
+
+            .timeline::after {
+                left:35px;
+            }
+
+            .timeline-container {
+                width:100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+
+            .text-box {
+                font-size: 13px;
+            }
+            .text-box small {
+                margin-bottom: 10px;
+            }
+            .right-container {
+                left: 0;
+            }
+
+            .left-container i, .right-container i {
+                left:10px;
+            }
+
+            .left-container-arrow, .right-container-arrow {
+                border-right: 15px solid white;
+                border-left: 0;
+                left: -15px;
+
+            }
+        }
+
+   
+    </style>
+
+</head>
+<body>
+            
+    <nav  id="home">
+        <div class="topnav" id="theTopNav">
+            <i class="fa-solid fa-bars-staggered faMenu"></i>
+            <a href="./index.html"><img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="120"  width="150" class="logo" style="cursor: pointer;" ></a>
+            <ul class="mainLinks" id="theMainLinks">
+                <li class="mainLink"><a href="index.html">Home</a></li>
+                <li class="mainLink"><a href="about.html">About</a></li>
+                <li class="mainLink"><a href="services.html" >Services</a></li>
+                <li class="mainLink"><a href="process.html"  class="active">Process</a></li>
+                <li class="mainLink"><a href="gallery.html">Gallery</a></li>
+                <li class="mainLink"><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="contact">
+                <ul>
+                    <li><a href="tel:19016199897">(901) 619-9897</a></li>
+                    <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="sideNav">
+        <ul class="sideLinks">
+            <li class="sideLink"><a href="index.html"><i class="fa-solid fa-home"></i>Home</a></li>
+            <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+            <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
+            <li class="sideLink"><a href="process.html"><i class="fa-solid fa-quote-left"></i>Process</a></li>
+            <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-iamges"></i>Gallery</a></li>
+            <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
+        </ul>
+        <div class="closeButton">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+
+
+
+
+        <div class="top">
+            <h1><span class="companyName">Process </span></h1>
+        </div>
+        
+        <!-- <div class="titleContainer">
+                    <p>The process from consultation and assessment through to pricing and preparing for the services offered by Memphis Sealcoat typically involves several detailed steps to ensure quality service delivery and customer satisfaction.</p>
+            </div> -->
+
+       <div class="timeline ">
+
+        <div class="timeline-container left-container">
+            <i class="fas fa-phone" style="color: limegreen;"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="timeline-container right-container">
+            <i class="fas fa-location-dot" style="color: red;"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="timeline-container left-container">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="timeline-container right-container">
+            <i class="fas fa-handshake"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="right-container-arrow"></span>
+
+            </div>
+        </div>
+
+        <div class="timeline-container left-container">
+            <i class="fas fa-calendar-check"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="timeline-container right-container">
+            <i class="fas fa-tools"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="right-container-arrow"></span>
+
+            </div>
+        </div>
+
+        <div class="timeline-container left-container">
+            <i class="fas fa-check-double"></i>
+            <div class="text-box">
+                <h2>Alphabet</h2>
+                <small>2018 -2019</small>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint veritatis in blanditiis odio iure omnis fugit facere exercitationem laboriosam consectetur quod incidunt ab, nobis amet fuga eveniet alias architecto eum?</p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+
+       
+       </div>
+
+           
+   
+ 
+
+    
+    <footer>
+        <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo"  >
+        <div class="browseLinks">
+          <h3>Browse<i class="fa-solid fa-magnifying-glass" style="margin-left: 10px;"></i></h3>
+        <div class="linkHolder">
+          <ul>
+            <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
+            <li><a href="process.html"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
+            
+          </ul>
+        </div>
+        </div>
+        <div class="contactInfo">
+            <h3>Contact Info</h3>
+            <div class="contactInformation">
+              <ul>
+                <li><a>Schedule</a></li>
+                <li><a>Mon - Fri 7:00 am - 5:00pm</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=1138 N Germantown PKWY, Suite 101 PMB 145">1138 N Germantown PKWY, Suite 101 PMB 145</a></li>
+                <li><a href="mailto:Nick@memphissealcoat.com">Nick@memphissealcoat.com </a></li>
+                <li><a href="tel:19016199897">(901) 619-9897</a></li>
+            </ul>
+        
+            </div>
+          </div>
+        
+      </footer>
+
+
+    
+        <div class="overlay"></div>
+      <script   src="./serviceScript.js"></script>
+   
+</body>
+</html>

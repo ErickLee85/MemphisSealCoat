@@ -14,25 +14,33 @@
     <style>
 
         body {
-            background:linear-gradient(to bottom right, #000000, rgb(0, 0, 0));
+            background:rgb(0, 0, 0);
         }
 
         .titleContainer {
             padding:10px;
-            margin-top: 50px auto;
+            max-width: 600px;
+            margin:0px auto;
+        }
+
+        .promotional {
+            padding:10px;
+            max-width: 1274px;
+            margin:0px auto;
+        }
+        .promotional p {
+            font-size: 1rem;
+            color: #050505;
+            font-weight: 700;
         }
 
         h1 {
    
-                color: white;
+                color: rgb(255, 255, 255);
                 text-align: center;
                 font-size: 2.8rem;
         }
-        .titleContainer p {
-            font-size: 1rem;
-            color: #a5a5a5;
-            text-align: center;
-        }
+     
 
         .cardContainer {
             display: grid;
@@ -55,16 +63,16 @@
         
 
             .card {
-            border:1px solid black;
+     
             border-radius: 8px;
             padding: 20px;
             margin: 10px;
             width: 300px;
-            background: rgb(53, 53, 53);
+            background: rgb(238, 238, 238);
             opacity: 1;
             box-shadow: 0 0px 10px rgba(0,0,0,0.4);
             cursor: pointer;
-            transition: 500ms ease;
+            transition: 300ms ease;
         }
 
     
@@ -73,26 +81,55 @@
         .card h2 {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            color: rgb(212, 212, 212)
+            color: #575757;
         }
         .card p {
             font-size: 1rem;
-            color: #a5a5a5;
+            color: #292929;
+            font-weight: 500;
         }
-        .icon {
+        .icon:nth-child(1) {
             font-size: 2rem;
             margin-bottom: 10px;
-            color: rgb(255, 255, 255);
+            color: goldenrod;
         }
 
         .titleContainer h3 {
         
             font-size: 2.5rem;
-            color: white;
+            color: rgb(255, 255, 255);
             font-weight: 700;
             text-align: center;
             margin-top: 50px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
+
+        .titleContainer p {
+            text-align: center;
+            color: #575757;
+        }
+
+        .promotional button {
+        padding:10px 25px;
+        font-weight: 700;
+        outline: none;
+        border:none;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        border: 2px solid goldenrod;
+        background-color: goldenrod;
+        transition: 500ms ease-in-out;
+        }
+
+        .promotional button:hover {
+        color: goldenrod;
+        background-color: black;
+        }
+
    
 
         
@@ -108,9 +145,9 @@
 
         @media(min-width: 768px) {
             .card:hover {
-            transform: scale(1.2);
-            filter: brightness(1.2);
+            transform: scale(1.1);
             z-index: 100;
+            border:2px solid white;
         }
 
      
@@ -130,7 +167,7 @@
                 <li class="mainLink"><a href="index.html">Home</a></li>
                 <li class="mainLink"><a href="about.html">About</a></li>
                 <li class="mainLink"><a href="services.html"  class="active">Services</a></li>
-                <li class="mainLink"><a href="index.html#process">Process</a></li>
+                <li class="mainLink"><a href="process.html">Process</a></li>
                 <li class="mainLink"><a href="gallery.html">Gallery</a></li>
                 <li class="mainLink"><a href="contact.html">Contact</a></li>
             </ul>
@@ -147,7 +184,7 @@
             <li class="sideLink"><a href="index.html"><i class="fa-solid fa-home"></i>Home</a></li>
             <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li class="sideLink"><a href="index.html#process"><i class="fa-solid fa-quote-left"></i>Process</a></li>
+            <li class="sideLink"><a href="process.html"><i class="fa-solid fa-quote-left"></i>Process</a></li>
             <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-iamges"></i>Gallery</a></li>
             <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
         </ul>
@@ -166,10 +203,11 @@
         <div class="titleContainer">
      
             <h3>Smooth Surfaces & Stronger Streets</h3>
-            <p>Revitalize Your Roads with Expert Seal Coating Solutions</p>
+                    <p>Revitalize Your Roads with The Experts <i class="fa-solid fa-check" style="margin-left: 10px; color: goldenrod;"></i></p>
+
             </div>
 
-        <div class="cardContainer">
+        <div class="cardContainer hidden">
 
            
         
@@ -225,10 +263,15 @@
         </div>
       
     </div>
+
+    <div class="promotional">
+        <a href="contact.html">       <button>Get Free Quote <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button></a>
+    </div>
  
 
     
     <footer>
+        <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo"  >
         <div class="browseLinks">
           <h3>Browse<i class="fa-solid fa-magnifying-glass" style="margin-left: 10px;"></i></h3>
         <div class="linkHolder">
@@ -236,7 +279,7 @@
             <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li><a href="index.html#process"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
+            <li><a href="process.html"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
             <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
             <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             

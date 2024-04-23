@@ -128,6 +128,21 @@
         text-decoration: none;
         cursor: pointer;
         }
+
+        @media(max-width:791px) {
+            .gridContainer {
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+               
+            }
+
+            .grid {
+                max-width: auto;
+                height: 450px;
+                
+            }
+        }
                 
 
    
@@ -144,7 +159,7 @@
                 <li class="mainLink"><a href="index.html">Home</a></li>
                 <li class="mainLink"><a href="about.html">About</a></li>
                 <li class="mainLink"><a href="services.html">Services</a></li>
-                <li class="mainLink"><a href="index.html#process">Process</a></li>
+                <li class="mainLink"><a href="process.html">Process</a></li>
                 <li class="mainLink"><a href="gallery.html" class="active">Gallery</a></li>
                 <li class="mainLink"><a href="contact.html">Contact</a></li>
             </ul>
@@ -161,7 +176,7 @@
             <li class="sideLink"><a href="index.html"><i class="fa-solid fa-home"></i>Home</a></li>
             <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li class="sideLink"><a href="index.html#process"><i class="fa-solid fa-quote-left"></i>Process</a></li>
+            <li class="sideLink"><a href="process.html"><i class="fa-solid fa-quote-left"></i>Process</a></li>
             <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
         </ul>
@@ -181,7 +196,7 @@
         <h3>Our Portfolio</h3>
         </div>
 
-        <div class="gridContainer">
+        <div class="gridContainer hidden">
             <div class="grid grid-col-span-2 grid-row-span-2"><img src="./assets/img_1-min.JPG" alt=""></div>
             <div class="grid grid-row-span-2"><img src="./assets/im_2-min.JPG" alt=""></div>
             <div class="grid grid-row-span-3"><img src="./assets/img_3-min.jpg" alt=""></div>
@@ -210,6 +225,7 @@
 
     
     <footer>
+        <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo"  >
         <div class="browseLinks">
           <h3>Browse<i class="fa-solid fa-magnifying-glass" style="margin-left: 10px;"></i></h3>
         <div class="linkHolder">
@@ -217,7 +233,7 @@
             <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li><a href="index.html#process"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
+            <li><a href="process.html"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
             <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
             <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             

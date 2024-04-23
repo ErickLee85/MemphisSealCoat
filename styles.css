@@ -323,7 +323,7 @@ nav {
    width: 100%;
    height: 100%;
    object-fit: cover;
-   filter: brightness(0.3);
+   filter: brightness(0.4);
    z-index: -10;
 }
 
@@ -343,7 +343,8 @@ nav {
    padding-top: 20px;
    color: #dfdfdf;
    font-weight: 500;
-   font-size: 14px;
+   font-size: 16px;
+   line-height: 1.6;
 }
 
 .welcomeText button {
@@ -877,12 +878,26 @@ footer {
    justify-content: center;
    align-items: center;
    bottom:0;
- 
+   position: relative;
+}
+
+footer img {
+ position: absolute;
+ filter: brightness(0.3);
+ width: 100%;
+ height: 100%;
+ max-height: 350px;
+ max-width: 600px;
+ object-fit: cover;
+ object-position: center;
+ top:50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
 }
 
 .browseLinks {
    width:50%;
-   border-right: 2px solid white;
+
    height:200px;
    padding-left: 25px;
    display: flex;
@@ -917,9 +932,10 @@ footer {
    justify-content: flex-start ;
    gap:15px;
    padding-bottom: 5px;
-   color: rgb(162, 162, 162);
+   color: rgb(179, 179, 179);
    transition:300ms ease;
    font-size: 11px;
+   font-weight: 700;
 }
 
 .browseLinks .linkHolder li a:hover {
@@ -962,9 +978,10 @@ footer {
    justify-content: flex-start ;
    gap:15px;
    padding-bottom: 5px;
-   color: rgb(190, 190, 190);
+   color: rgb(179,179,179);
    transition:300ms ease;
    font-size: 10px;
+   font-weight: 700;
 }
 
 .contactInformation li a:hover {
@@ -974,5 +991,6 @@ footer {
 @media(min-width: 791px) {
    .contactInfo .contactInformation li a, .browseLinks .linkHolder li a {
       font-size: 16px;
+      font-weight: 400;
    }
 }
