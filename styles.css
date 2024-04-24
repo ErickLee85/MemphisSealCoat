@@ -49,10 +49,12 @@ nav {
 .topnav .faMenu {
    display: none;
    position:absolute;
-   top:50px;
-   left:20px;
+   top:20px;
+   left:0px;
    cursor: pointer;
    font-size: 20px;
+
+   padding:35px;
 }
 
 .topnav .logo {
@@ -81,14 +83,12 @@ nav {
 
 .topnav ul li  .active {
    background-color: #028DD1;
-   filter: brightness(1.5);
    color: white;
    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .topnav .mainLinks  li a:hover {
    background-color: #028DD1;
-   filter: brightness(1.5);
    color: white;
    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
@@ -197,7 +197,6 @@ nav {
 
 .sideNav li a:hover {
    background-color: #028DD1;
-   filter: brightness(1.5);
    color: white;
    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
@@ -217,7 +216,7 @@ nav {
    display: block; /* Show the overlay when sideNavActive class is present */
 }
 
-.heroVideo {
+.heroImage {
    position: fixed;
    top: 0;
    left: 0;
@@ -259,7 +258,6 @@ nav {
 
 .heroSection .heroContainer h3 {
    color: #028DD1;
-   filter: brightness(1.5);
    font-size: 0.8rem;
    max-width: 400px;
    line-height: 1.7;
@@ -277,7 +275,7 @@ nav {
    letter-spacing: 1px;
    transition: 500ms ease-in-out;
    border-radius: 25px;
-   filter: brightness(1.5);
+   color: black;
 }
 
 .heroSection button:hover {
@@ -364,6 +362,7 @@ nav {
    background-color: goldenrod;
    transition: 500ms ease-in-out;
    border-radius: 25px;
+   color: black;
 }
 
 .welcomeText button:hover {
@@ -549,6 +548,7 @@ nav {
    transition: 400ms ease-in-out;
    border: 2px solid #98ff21;
    border-radius: 25px;
+   color: black;
 }
 
 .serviceContainer button:hover {
