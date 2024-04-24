@@ -48,20 +48,20 @@
         .gridContainer {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
             padding-block: 2rem;
             margin-inline: auto;
             gap:1rem;
             overflow: hidden;
-            padding: 25px;
+            padding: 15px;
             min-height: 100vh;
             max-width: 1274px;
+            background-color: transparent;
         }
 
         .grid   {
-            border:2px solid white;
+            border:1px solid white;
             min-height: 250px;
-            border-radius: 15px;
             box-shadow: 0 0 20px rgba(0,0,0,0.7);
             color: white;
             position: relative;
@@ -139,7 +139,7 @@
         }
 
         .promotional {
-            padding-inline:20px;
+            padding-inline:14px;
             max-width: 1274px;
             margin:0px auto;
         }
@@ -177,8 +177,9 @@
             .grid {
                 max-width: auto;
                 height: 450px;
-                
+                cursor: pointer;
             }
+            
         }
                 
 
@@ -196,7 +197,6 @@
                 <li class="mainLink"><a href="index.html">Home</a></li>
                 <li class="mainLink"><a href="about.html">About</a></li>
                 <li class="mainLink"><a href="services.html">Services</a></li>
-                <li class="mainLink"><a href="process.html">Process</a></li>
                 <li class="mainLink"><a href="gallery.html" class="active">Gallery</a></li>
                 <li class="mainLink"><a href="contact.html">Contact</a></li>
             </ul>
@@ -213,7 +213,6 @@
             <li class="sideLink"><a href="index.html"><i class="fa-solid fa-home"></i>Home</a></li>
             <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li class="sideLink"><a href="process.html"><i class="fa-solid fa-quote-left"></i>Process</a></li>
             <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
         </ul>
@@ -246,6 +245,11 @@
             <div class="grid"><img src="./assets/img_10.jpeg" alt=""></div>
             <div class="grid"><img src="./assets/img_13.jpeg" alt=""></div>
             <div class="grid grid-col-span-2"><img src="./assets/img_11.jpeg" alt=""></div>
+            <div class="grid"><img src="./assets/bell_1.jpg" alt="Bell Harbor"></div>
+            <div class="grid grid-col-span-2 grid-row-span-2"><img src="./assets/bell_2.jpg" alt="Bell Harbor"></div>
+            <div class="grid"><img src="./assets/bell_3.jpg" alt="Bell Harbor"></div>
+            <div class="grid"><img src="./assets/bell_4.jpg" alt="Bell Harbor"></div>
+            <div class="grid grid-col-span-2 "><img src="./assets/bell_5.jpg" alt="Bell Harbor"></div>
         </div>
         <div class="promotional">
             <a href="contact.html">       <button>Get Free Quote <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button></a>
@@ -270,7 +274,6 @@
             <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li><a href="process.html"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
             <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
           
@@ -301,6 +304,8 @@
       <script>
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("modalImg");
+        var screenWidth = window.innerWidth;
+        console.log(typeof(screenWidth));
 
         // Get all images within the grid
         var images = document.querySelectorAll(".grid img");
@@ -308,10 +313,19 @@
         // Loop through each image and add an event listener for click
         images.forEach(function(img) {
         img.addEventListener("click", function() {
+           
+            if(screenWidth < 792) {
+                return false;
+            }
             modal.style.display = "block";
             modalImg.src = this.src;
         });
         });
+
+
+        window.addEventListener('resize', () => {
+            screenWidth = window.innerWidth;
+        })
 
     
 
@@ -321,6 +335,41 @@
         modal.style.display = "none";
         };
       </script>
+
+<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+<script>
+  /* paste this line in verbatim */
+  window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+  /* customize formbutton below*/     
+  formbutton("create", {
+    action: "https://formspree.io/f/xzbnyoev",
+    title: "Lets Talk 👋",
+    fields: [
+      { 
+        type: "email", 
+        label: "Email:", 
+        name: "email",
+        required: true,
+        placeholder: "your@email.com"
+      },
+      {
+        type: "textarea",
+        label: "Message:",
+        name: "message",
+        placeholder: "What's on your mind?",
+      },
+      { type: "submit" }      
+    ],
+    styles: {
+      title: {
+        backgroundColor: "darkblue"
+      },
+      button: {
+        backgroundColor: "darkblue"
+      }
+    }
+  });
+</script>
     
     
 </body>

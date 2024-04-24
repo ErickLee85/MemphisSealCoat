@@ -15,7 +15,7 @@
 
         body {
             
-            background-color: black;
+            background: linear-gradient(to bottom, black, rgb(33, 39, 117));
         }
 
         .titleContainer {
@@ -42,10 +42,11 @@
         }
 
         .timeline-container {
+            max-width: 1200px;
             padding: 10px 50px;
             position: relative;
             width: 50%;
-            animation: movedown 1s linear forwards;
+            animation: movedown 10s linear forwards;
             opacity: 0;
         }
 
@@ -106,11 +107,10 @@
             display: inline-block;
             margin-bottom: 15px;
             font-weight: 600;
-            padding:10px;
-            background-color: rgba(131, 131, 131, 0.1);
-            box-shadow: 0 2px rgba(0,0,0,0.9);
+
         }
 
+       
         .left-container {
             left: 0;
         }
@@ -175,7 +175,35 @@
             left:50%;
             margin-left: -4px;
             z-index: -1;
-            animation: moveline 7s linear forwards;
+            animation: moveline 10s linear forwards;
+        }
+
+        .promotional {
+            padding:20px;
+            width: 100%;
+            max-width: 1200px;
+            margin:0px auto;
+        }
+
+        .promotional button {
+        padding:10px 25px;
+        font-weight: 700;
+        outline: none;
+        border:none;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        border: 2px solid goldenrod;
+        background-color: goldenrod;
+        transition: 500ms ease-in-out;
+        }
+
+        .promotional button:hover {
+        color: goldenrod;
+        background-color: black;
         }
 
 
@@ -220,7 +248,7 @@
             }
 
             .left-container i, .right-container i {
-                left:10px;
+                left:12px;
             }
 
             .left-container-arrow, .right-container-arrow {
@@ -284,7 +312,7 @@
 
        <div class="timeline ">
 
-        <div class="timeline-container left-container">
+        <div class="timeline-container left-container hidden">
             <i class="fas fa-phone" style="color: rgb(0, 0, 0);"></i>
             <div class="text-box">
                 <h2>Initial Contact</h2>
@@ -297,10 +325,10 @@
             </div>
         </div>
 
-        <div class="timeline-container right-container">
+        <div class="timeline-container right-container hidden">
             <i class="fas fa-location-dot" style="color: red;"></i>
             <div class="text-box">
-                <h2>Consultation and Assessment</h2>
+                <h2 style="color: red; opacity: 0.5;">Consultation and Assessment</h2>
                 <small>Site Visit</small>
                 <p>A representative from Memphis Sealcoat visits the site to inspect the condition of the pavement. This involves measuring the area, assessing the damage, and identifying any specific challenges. The client doesn’t have to be there if they choose not to but if they want specifics it’s typically recommended.</p>
                 <small>Needs Analysis</small>
@@ -312,10 +340,10 @@
             </div>
         </div>
 
-        <div class="timeline-container left-container">
+        <div class="timeline-container left-container hidden">
             <i class="fas fa-file-invoice" style="color: limegreen;"></i>
             <div class="text-box">
-                <h2>Quote Preparation</h2>
+                <h2 style="color: limegreen; opacity: 0.5;">Quote Preparation</h2>
                 <small>Estimate Calculation</small>
                 <p>Our company calculates the cost of the recommended services, taking into account factors like materials, labor, the extent of prep work needed, and any special requirements.
                 </p>
@@ -326,10 +354,10 @@
             </div>
         </div>
 
-        <div class="timeline-container right-container">
+        <div class="timeline-container right-container hidden">
             <i class="fas fa-handshake" style="color:goldenrod;"></i>
             <div class="text-box">
-                <h2>Agreement</h2>
+                <h2 style="color:goldenrod; opacity: 0.5;">Agreement</h2>
                 <small>Review and Negotiation</small>
                 <p>The customer reviews the quote and discusses any concerns or adjustments with the company and we come to an agreement.</p>
                 <small>Contract</small>
@@ -339,10 +367,10 @@
             </div>
         </div>
 
-        <div class="timeline-container left-container">
+        <div class="timeline-container left-container hidden">
             <i class="fas fa-calendar-check" style="color: rgb(29, 120, 240);"></i>
             <div class="text-box">
-                <h2>Preparation for Services</h2>
+                <h2 style="color: rgb(29, 120, 240); opacity: 0.5;">Preparation for Services</h2>
                 <small>Scheduling</small>
                 <p> Memphis Sealcoat will then  schedule the service dates, coordinating with the customer to find suitable times, especially if the area in question is heavily used and come up with a viable plan. Keep in mind our work is weather dependent.
                 </p>
@@ -356,10 +384,10 @@
             </div>
         </div>
 
-        <div class="timeline-container right-container">
+        <div class="timeline-container right-container hidden">
             <i class="fas fa-tools" style="color: rgb(233, 12, 12);"></i>
             <div class="text-box">
-                <h2>Service Execution</h2>
+                <h2 style="color: rgb(233, 12, 12); opacity: 0.5;">Service Execution</h2>
                 <small>Project Initiation</small>
                 <p>Memphis Sealcoat begins the work as scheduled, conducting the necessary pavement services like filling cracks, applying sealant, and striping lines.
                 </p>
@@ -370,10 +398,10 @@
             </div>
         </div>
 
-        <div class="timeline-container left-container">
+        <div class="timeline-container left-container hidden">
             <i class="fas fa-check-double" style="color: limegreen;"></i>
             <div class="text-box">
-                <h2>Project Completion and Follow-Up</h2>
+                <h2 style="color: limegreen; opacity: 0.5;">Project Completion and Follow-Up</h2>
                 <small>Final Inspection</small>
                 <p> Once the work is complete, a final inspection is done to ensure the quality and completeness of the job.
                 </p>
@@ -387,6 +415,9 @@
 
        
        </div>
+       <div class="promotional">
+        <a href="contact.html">       <button>Get Free Quote <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button></a>
+    </div>
 
            
   

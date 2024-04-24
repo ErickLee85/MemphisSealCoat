@@ -9,9 +9,17 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aec8d5c56a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+
+
     <title>Memphis Sealcoat LLC</title>
 </head>
 <body>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.css" type="text/css">
 
     <style>
 
@@ -209,6 +217,7 @@
                 }
                 .contactForm {
                     flex-direction: column;
+                    
                     margin-top: 350px;
                     gap:25px;
                 }
@@ -229,8 +238,19 @@
                     max-width: 325px;
                 }
             }
+
+            #map {
+              width: 100%;
+              height: 400px;
+            }
         
         
+            #my-form-status {
+              margin-top: 25px;
+              font-weight: 600;
+              font-size: 12px;
+              color: #0056b3;
+            }
           
    
     </style>
@@ -243,7 +263,6 @@
                 <li class="mainLink"><a href="index.html#home" >Home</a></li>
                 <li class="mainLink"><a href="about.html" >About</a></li>
                 <li class="mainLink"><a href="services.html">Services</a></li>
-                <li class="mainLink"><a href="process.html">Process</a></li>
                 <li class="mainLink"><a href="gallery.html">Gallery</a></li>
                 <li class="mainLink"><a href="contact.html" class="active">Contact</a></li>
             </ul>
@@ -262,8 +281,7 @@
             <li class="sideLink"><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
             <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li class="sideLink"><a href="process.html"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
-            <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-list-check"></i>Gallery</a></li>
+            <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
         </ul>
         <div class="closeButton">
@@ -316,7 +334,7 @@
 
 
         <div class="form-container">
-           <form action="" id="quoteForm">
+           <form id="quoteForm" action="https://formspree.io/f/xzbnyoev" method="POST">
             <h2>Get Free Quote</h2>
             <div class="form-group">
               <input type="text" placeholder=" " id="name" required name="Name">
@@ -338,21 +356,23 @@
               </div>
           
             <button class="submit-button" type="submit">Send<i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
+            <p id="my-form-status"></p>
            </form>
           </div>
     </div>
 
 
     <!-- <iframe
-width="100%"
-height="350"
-style="border: 0;"
-loading="lazy"
-allowfullscreen
-referrerpolicy="no-referrer-when-downgrade"
-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1fimdALRPcsY
-    &q=1138+N+Germantown+PKWY+Memphis+TN">
-</iframe> -->
+  width="100%"
+  height="250"
+  style="border: 0;"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1fimdALRPcsY
+      &q=1138+N+Germantown+PKWY+Memphis+TN">
+  </iframe> -->
+  <div id="map"></div>
 
       <footer>
         <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo"  >
@@ -363,7 +383,6 @@ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1
             <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
-            <li><a href="process.html"><i class="fa-solid fa-diagram-project"></i>Process</a></li>
             <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
             
@@ -401,6 +420,99 @@ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1
                 console.log("Form data:", formValues);
             })
         </script>
+
+<script>
+  var form = document.getElementById("quoteForm");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Message Sent! We will get back to you as soon as possible!";
+        form.reset()
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form."
+          }
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form."
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
+
+     
+
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpY2tjcm93bmU4NSIsImEiOiJjbHZjeGJrdWMwbmo3MmlwN3lsY3h6MG80In0.BeX6Rpccyt5zp60EhWQ6PA';
+        const latitude = 35.157270;
+        const longitude = -89.792830;
+        var map = new mapboxgl.Map({
+        container: 'map',
+        center: [longitude, latitude], // replace with the longitude and latitude of the business address
+        zoom: 16,
+        style: 'mapbox://styles/erickcrowne85/clvdkp4bb04nc01pkfknh0b1n'
+        });
+        
+        var marker = new mapboxgl.Marker()
+          .setLngLat([longitude, latitude]) // replace with the longitude and latitude of the business address
+          .addTo(map);
+
+        const nav = new mapboxgl.NavigationControl()
+        map.addControl(nav)
+        const directions = new MapboxDirections({
+          accessToken: mapboxgl.accessToken
+        })
+       map.addControl(directions, 'top-left')
+        </script>
+
+<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+<script>
+  /* paste this line in verbatim */
+  window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+  /* customize formbutton below*/     
+  formbutton("create", {
+    action: "https://formspree.io/f/xzbnyoev",
+    title: "Lets Talk 👋",
+    fields: [
+      { 
+        type: "email", 
+        label: "Email:", 
+        name: "email",
+        required: true,
+        placeholder: "your@email.com"
+      },
+      {
+        type: "textarea",
+        label: "Message:",
+        name: "message",
+        placeholder: "What's on your mind?",
+      },
+      { type: "submit" }      
+    ],
+    styles: {
+      title: {
+        backgroundColor: "darkblue"
+      },
+      button: {
+        backgroundColor: "darkblue"
+      }
+    }
+  });
+</script>
     
 </body>
 </html>
