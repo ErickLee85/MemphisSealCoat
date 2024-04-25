@@ -32,13 +32,21 @@
          
 
           .mainDiv {
-            position: relative;
             min-height: 100vh;
             width: 100%;
             margin-top: -50px;
             clip-path: polygon(0 0,50% 50px,100% 0,100% 100%,0 100%);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)) , url(./assets/memphis-min.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: none;
+            padding:20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
           }
-
+/* 
           .mainDiv img {
             position: absolute;
             inset: 0;
@@ -47,42 +55,36 @@
             height: 100%;
             width: 100%;
             filter: brightness(0.35);
-          }
+          } */
 
           .contactForm {
-            position: absolute;
-            top:70%;
-            left:50%;
-            transform: translate(-50%,-50%);
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            align-items: center;
             gap:150px;
             height:auto;
-
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
           }
 
           .mainDiv h3 {
             color: rgb(255, 255, 255);
             min-width: 300px;
             max-width: 600px;
-            position: absolute;
-            top:20%;
-            left:50%;
-            transform: translate(-50%, -50%);
             font-size: 1.35rem;
-
+            padding-top: 75px;
           }
 
-          .contactForm {
-          margin:200px auto;
-          }
+        
 
       .contactForm .contactButtons {
             min-width: 350px;
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            margin-top: 100px;
+            margin-top: 25px;
           }
 
           .contactForm .contactButtons i {
@@ -207,19 +209,18 @@
 
             @media(max-width:1145px) {
 
-                .mainDiv {
+                /* .mainDiv {
                     height: 1200px;
-                }
+                } */
 
                 .mainDiv h3 {
-                    top:12%;
+                  
                     min-width: 350px;
                 }
                 .contactForm {
                     flex-direction: column;
-                    
-                    margin-top: 350px;
                     gap:25px;
+                    margin-top: 25px;
                 }
 
                 .holder:nth-child(2) {
@@ -229,6 +230,7 @@
             }
 
             @media(max-width:445px) {
+             
                 .form-container {
               
                     max-width: 325px;
@@ -237,6 +239,18 @@
                 .contactForm .contactButtons {
                     max-width: 325px;
                 }
+            }
+
+
+            @media(max-width: 390px) {
+              .mainDiv h3 {
+                font-size: 0.8rem;
+                padding:20px;
+                padding-top: 100px;
+              }
+              p {
+                font-size: 0.8rem
+              };
             }
 
             #map {
@@ -261,15 +275,16 @@
             <a href="./index.html"><img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="120"  width="150" class="logo" ></a>
             <ul class="mainLinks" id="theMainLinks">
                 <li class="mainLink"><a href="index.html#home" >Home</a></li>
-                <li class="mainLink"><a href="about.html" >About</a></li>
                 <li class="mainLink"><a href="services.html">Services</a></li>
                 <li class="mainLink"><a href="gallery.html">Gallery</a></li>
                 <li class="mainLink"><a href="contact.html" class="active">Contact</a></li>
+                                <li class="mainLink"><a href="about.html" >About</a></li>
+
             </ul>
             <div class="contact">
                 <ul>
                     <li><a href="tel:19016199897">(901) 619-9897</a></li>
-                    <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="mailto:Nick@memphissealcoat.com"><i class="fa-solid fa-envelope"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -279,10 +294,11 @@
         <!-- <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="200"  width="260" class="logo" > -->
         <ul class="sideLinks">
             <li class="sideLink"><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
-            <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
             <li class="sideLink"><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li class="sideLink"><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
+                        <li class="sideLink"><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+
         </ul>
         <div class="closeButton">
             <i class="fa-solid fa-xmark"></i>
@@ -296,70 +312,70 @@
 
 
     <div class="mainDiv ">
-        <img src="./assets/memphis-min.jpeg" alt="memphis">
         <h3 class="hidden">  
             Get Started Today! Fill out the form below for a free, no-obligation quote or just call us!
     </h3>
+    <div class="contactForm hidden">
+          
+      <div class="contactButtons">
+          <div class="holder">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                  <p style="color: rgb(38, 169, 230);">Address</p>
+                  <p>1138 N Germantown PKWY</p>
+                    <p> Suite 101 PMB 145</p>
+              </div>
+          </div>
+          <div class="holder">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                  <p style="color: rgb(38, 169, 230);">Phone</p>
+                 <a href="tel:19016199897"> <p>(901)619-9897</p></a>
+              
+              </div>
+          </div>
+          <div class="holder">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                  <p style="color: rgb(38, 169, 230);">Email</p>
+                 <a href="mailto:Nick@memphissealcoat.com"> <p>Nick@memphissealcoat.com</p></a>
+              
+              </div>
+          </div>
+      </div>
+
+
+      <div class="form-container">
+         <form id="quoteForm" action="https://formspree.io/f/xzbnyoev" method="POST">
+          <h2>Get Free Quote</h2>
+          <div class="form-group">
+            <input type="text" placeholder=" " id="name" required name="Name">
+            <label for="name">Full name</label>
+          </div>
+    
+          <div class="form-group">
+            <input type="email" placeholder=" " id="inputField" required name="Email">
+            <label for="inputField">Email Address</label>
+          </div>
+          <div class="form-group">
+            <input type="number" placeholder=" " id="number" required name="Phone">
+            <label for="number">Phone</label>
+          </div>
+          <div class="form-group">
+              <textarea type="text" placeholder=" " rows="2" cols="50" id="message" required name="Message">
+                  </textarea> 
+              <label for="message">Message</label>
+            </div>
+        
+          <button class="submit-button" type="submit">Send<i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
+          <p id="my-form-status"></p>
+         </form>
+        </div>
+  </div>
        
     </div>
 
-    <div class="contactForm hidden">
-          
-        <div class="contactButtons">
-            <div class="holder">
-                <i class="fa-solid fa-location-dot"></i>
-                <div>
-                    <p style="color: rgb(38, 169, 230);">Address</p>
-                    <p>1138 N Germantown PKWY</p>
-                      <p> Suite 101 PMB 145</p>
-                </div>
-            </div>
-            <div class="holder">
-                <i class="fa-solid fa-phone"></i>
-                <div>
-                    <p style="color: rgb(38, 169, 230);">Phone</p>
-                   <a href="tel:19016199897"> <p>(901)619-9897</p></a>
-                
-                </div>
-            </div>
-            <div class="holder">
-                <i class="fa-solid fa-envelope"></i>
-                <div>
-                    <p style="color: rgb(38, 169, 230);">Email</p>
-                   <a href="mailto:Nick@memphissealcoat.com"> <p>Nick@memphissealcoat.com</p></a>
-                
-                </div>
-            </div>
-        </div>
-
-
-        <div class="form-container">
-           <form id="quoteForm" action="https://formspree.io/f/xzbnyoev" method="POST">
-            <h2>Get Free Quote</h2>
-            <div class="form-group">
-              <input type="text" placeholder=" " id="name" required name="Name">
-              <label for="name">Full name</label>
-            </div>
-      
-            <div class="form-group">
-              <input type="email" placeholder=" " id="inputField" required name="Email">
-              <label for="inputField">Email Address</label>
-            </div>
-            <div class="form-group">
-              <input type="number" placeholder=" " id="number" required name="Phone">
-              <label for="number">Phone</label>
-            </div>
-            <div class="form-group">
-                <textarea type="text" placeholder=" " rows="2" cols="50" id="message" required name="Message">
-                    </textarea> 
-                <label for="message">Message</label>
-              </div>
-          
-            <button class="submit-button" type="submit">Send<i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
-            <p id="my-form-status"></p>
-           </form>
-          </div>
-    </div>
+   
 
 
     <!-- <iframe
@@ -372,7 +388,7 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1fimdALRPcsY
       &q=1138+N+Germantown+PKWY+Memphis+TN">
   </iframe> -->
-  <div id="map"></div>
+  <!-- <div id="map"></div> -->
 
       <footer>
         <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo"  >
@@ -381,10 +397,11 @@
         <div class="linkHolder">
           <ul>
             <li><a href="index.html#home"><i class="fa-solid fa-home"></i>Home</a></li>
-            <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
             <li><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
             <li><a href="gallery.html"><i class="fa-solid fa-images"></i>Gallery</a></li>
             <li><a href="contact.html"><i class="fa-solid fa-comment"></i>Contact</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+
             
           </ul>
         </div>
@@ -456,7 +473,7 @@
 
      
 
-      <script>
+      <!-- <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpY2tjcm93bmU4NSIsImEiOiJjbHZjeGJrdWMwbmo3MmlwN3lsY3h6MG80In0.BeX6Rpccyt5zp60EhWQ6PA';
         const latitude = 35.157270;
         const longitude = -89.792830;
@@ -477,7 +494,7 @@
           accessToken: mapboxgl.accessToken
         })
        map.addControl(directions, 'top-left')
-        </script>
+        </script> -->
 
 <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
 <script>

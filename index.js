@@ -149,3 +149,9 @@ hiddenElements.forEach((element) => observer.observe(element));
 //   const companyInfo = document.querySelectorAll('.top');
 //   companyInfo.forEach((element) => observer.observe(element));
 
+
+
+window.addEventListener('load', () => {
+    const video = document.querySelector('.heroSection .heroVideo');
+    video.play();
+})
