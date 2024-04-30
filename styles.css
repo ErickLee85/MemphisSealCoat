@@ -23,6 +23,7 @@ body {
    background-color: black;
    scroll-behavior: smooth;
    overflow-x: hidden;
+   visibility: hidden;
 }
 
 nav {
@@ -321,7 +322,7 @@ nav {
 .welcomeContainer {
    position: relative;
    width:100%;
-   min-height: 100vh;
+   min-height:100vh;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -1301,4 +1302,25 @@ background-color: black;
    }
 }
 
+
+#creator {
+   width: 100%;
+ background: rgb(0, 0, 0);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+#creator a {
+   text-decoration: none;
+   font-size: 0.8rem;
+   background: #A548DF;
+   background: linear-gradient(to right, #863ab4 0%, #eb4aee 100%);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-weight: 700;
+   transition: 300ms;
+}
 

@@ -90,3 +90,8 @@ hiddenElements.forEach((element) => observer.observe(element));
 //   const companyInfo = document.querySelectorAll('.top');
 //   companyInfo.forEach((element) => observer.observe(element));
 
+
+
+window.addEventListener('load', () => {
+    document.body.style.visibility = 'visible';
+})

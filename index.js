@@ -152,6 +152,7 @@ hiddenElements.forEach((element) => observer.observe(element));
 
 
 window.addEventListener('load', () => {
+    document.body.style.visibility = 'visible';
     const video = document.querySelector('.heroSection .heroVideo');
     video.play();
 })
