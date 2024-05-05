@@ -277,18 +277,20 @@ if (serviceSelection === 'lineStriping') {
 
 }
 
-document.getElementById("footageInput").addEventListener("keyup", function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        estimateCost()
-    }
-});
+// document.getElementById("footageInput").addEventListener("keyup", function(event) {
+//     if (event.key === 'Enter') {
+//         event.preventDefault();
+//         estimateCost()
+//     }
+// });
 
-document.getElementById("footageInput").addEventListener("input", function(event) {
-    let value = event.target.value;
-    // Remove non-numeric characters
-    event.target.value = value.replace(/\D/g, '');
-});
+// document.getElementById("footageInput").addEventListener("input", function(event) {
+//     let value = event.target.value;
+//     // Remove non-numeric characters
+//     event.target.value = value.replace(/\D/g, '');
+// });
+
+
 // const estimateCost = () => {
 //     var serviceSelection = document.getElementById("serviceSelection").value;
 //     var footageInput = document.getElementById("footageInput").value;
