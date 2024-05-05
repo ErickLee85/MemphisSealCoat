@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="description" content="Sealcoating Company located in Memphis, TN">
+    <meta name="keywords" content="Seal Coating, Crack Filling, Pothole Repair, Line Striping, Asphalt Repair, Preventitive Maintenance, Cleaning and Preparation, Traffic Control, Clearing and Cleaning Parking Lots"> -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/aec8d5c56a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6f38329693.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Memphis Sealcoat LLC</title>
 </head>
 <body>
@@ -92,10 +95,10 @@
 <div class="welcomeContainer">
   <img src="./assets/curvy_road.png" alt="curvy road">
   <div class="welcomeText">
-    <h1>Memphis Sealcoat</h1>
-    <div style="width:75%; background-color: goldenrod; height: 2px;"></div>
+    <h1 class="blurry">Memphis Sealcoat</h1>
+    <div class="progress-bar" style="width:75%; background-color: goldenrod; height: 2px; "></div>
 
-  <p>
+  <p class="blurry">
 
     Welcome to Memphis Sealcoat and Striping! We're dedicated to providing top-notch seal
     coating services for both residential and commercial clients throughout Memphis, TN. 
@@ -116,12 +119,12 @@
 
 
 <section class="serviceContainer" id="services">
-    <h1>Services <i class="fa-solid fa-check" style="margin-left: 10px;"></i></h1>
+    <h1 class="blurry">Services <i class="fa-solid fa-check" style="margin-left: 10px;"></i></h1>
 
     <section class="card__container">
   
       <!--==================== SERVICE CARD ====================-->
-      <div class="card__bx card__1 ">
+      <div class="card__bx card__1 blurred">
         <div class="card__data">
           <div class="card__icon">
             <div class="card__icon-bx">
@@ -135,7 +138,7 @@
           </div>
         </div>
       </div>
-      <div class="card__bx card__2 ">
+      <div class="card__bx card__2 blurred">
         <div class="card__data">
           <div class="card__icon">
             <div class="card__icon-bx"><i class="fa-solid fa-road"></i></div>
@@ -148,7 +151,7 @@
           </div>
         </div>
       </div>
-      <div class="card__bx card__3">
+      <div class="card__bx card__3 blurred">
         <div class="card__data">
           <div class="card__icon">
             <div class="card__icon-bx"><i class="fa-solid fa-exclamation-triangle"></i></div>
@@ -161,7 +164,7 @@
           </div>
         </div>
       </div>
-      <div class="card__bx card__4">
+      <div class="card__bx card__4 blurred">
         <div class="card__data">
           <div class="card__icon">
             <div class="card__icon-bx"><i class="fa-solid fa-paint-roller"></i></div>
@@ -178,12 +181,42 @@
    <a href="./services.html"> <button>See More Services <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button></a>
   </section>
 
+  <div class="pricingContainer">
+    <div class="pricingtext">
+      <h1>Estimate <i class="fa-solid fa-calculator" style="margin-left: 10px;"></i></h1>
+    <p>We believe pricing should be staightforward, fair and affordable for all customers. </p>
+    </div>
+    <div class="pricingCard">
+   
+      <div class="selectContainer">
+      
+          <label for="serviceSelection"><i class="fa-solid fa-shield-alt" style="margin-right: 10px;"></i>Select Service</label>
+        <select name="serviceSelection" id="serviceSelection">
+          <option value="sealCoat">Seal Coat (ft²)</option>
+          <option value="parkingLotClean"> Parking Lot Cleaning (ft²)</option>
+          <option value="crackFill">Crack Fill (LF)</option>
+          <option value="lineStriping">Line Striping (LF)</option>
+          
+        </select>
+        <label for="footageInput"><i class="fa-solid fa-ruler" style="margin-right: 10px;"></i>Enter Footage</label>
+        <input type="number" id="footageInput" >
+   
+        <button onclick="estimateCost()">Estimate Cost <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button>
+      </div>
+    </div>
+    <div class="price">
+      <i class="fa-solid fa-dollar-sign" style="color: rgb(14, 155, 14); font-size: 6rem;"></i>
+      <p id="serviceCost"></p>
+      <h3 id="estimatePrice"></h3>
+    </div>
+  </div>
+  
 
-  <h1 class="timelineProcess">
+  <h1 class="timelineProcess blurry">
     Our <span>Process</span>
   </h1>
   <div class="timelineSubContainer">
-    <p class="timelineSub">The process at Memphis Sealcoat involves multiple steps, starting from consultation and assessment 
+    <p class="timelineSub blurry">The process at Memphis Sealcoat involves multiple steps, starting from consultation and assessment 
       and progressing through pricing and preparation for services. These steps are meticulously designed
        to ensure high-quality service delivery and customer satisfaction.</p>
   </div>
@@ -204,7 +237,7 @@
         </div>
     </div>
 
-    <div class="timeline-container right-container ">
+    <div class="timeline-container right-container  ">
         <i class="fas fa-location-dot" style="color: red;"></i>
         <div class="text-box">
             <h2 style="color: red; ">Consultation and Assessment</h2>
@@ -263,7 +296,7 @@
         </div>
     </div>
 
-    <div class="timeline-container right-container ">
+    <div class="timeline-container right-container">
         <i class="fas fa-tools" style="color: rgb(233, 12, 12);"></i>
         <div class="text-box">
             <h2 style="color: rgb(233, 12, 12); ">Service Execution</h2>
@@ -294,6 +327,8 @@
 
    
    </div>
+
+
 
 
   
@@ -348,9 +383,9 @@
         
 </div> -->
 
-<div class="topTitle">Why Choose Memphis Sealcoat
+<div class="topTitle ">Why Choose Memphis Sealcoat
 </div>
-<div class="bottomText"><p>
+<div class="bottomText "><p class="blurry">
   At Memphis Sealcoat and Striping, we are dedicated to providing exceptional
   asphalt maintenance and repair services to our clients in the Memphis, TN
   area. Our mission is to extend the life of asphalt surfaces and enhance their

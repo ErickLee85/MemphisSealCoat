@@ -104,7 +104,11 @@ nav {
   
  }
 
-
+@media(max-width: 397px) {
+   .contact ul li a {
+      font-size: 0.65rem;
+   }
+}
 
  /* @media(max-width: 377px) {
 
@@ -133,8 +137,6 @@ nav {
    align-items: center;
    box-shadow: 0 0 10px rgba(0,0,0,0.4);
    transition: width 200ms ease-in-out;
-   overflow-y: scroll;
-   scrollbar-width:thin;
 }
 
 
@@ -234,8 +236,7 @@ nav {
    top: 0;
    left: 0;
    width: 100%;
-   height: 1000px;
-   max-height:1000px;
+   min-height: 100vh;
    object-fit: cover;
    z-index: -10;
    filter: brightness(0.5);
@@ -259,20 +260,20 @@ nav {
 
 .heroSection .heroContainer h1 {
    color: rgb(255, 255, 255);
-   font-size: 3.5rem;
+   font-size: 4.5rem;
    text-align: left;
 }
 
 .heroSection .heroContainer h2 {
    color: rgb(255, 255, 255);
-   font-size: 2.5rem;
+   font-size: 3rem;
    text-align: left;
 
 }
 
 .heroSection .heroContainer h3 {
    color: #028DD1;
-   font-size: 0.8rem;
+   font-size: 1rem;
    max-width: 400px;
    line-height: 1.7;
    padding:5px;
@@ -302,6 +303,26 @@ nav {
    .heroSection {
       padding-left: 25px;
       padding-right: 25px;
+   }
+   .heroSection .heroContainer h1 {
+      color: rgb(255, 255, 255);
+      font-size: 3.5rem;
+      text-align: left;
+   }
+   
+   .heroSection .heroContainer h2 {
+      color: rgb(255, 255, 255);
+      font-size: 2.5rem;
+      text-align: left;
+   
+   }
+   
+   .heroSection .heroContainer h3 {
+      color: #028DD1;
+      font-size: 0.7rem;
+      max-width: 400px;
+      line-height: 1.7;
+      padding:5px;
    }
 }
 
@@ -348,6 +369,7 @@ nav {
    font-weight: 700;
    font-size: 2.8rem;
    padding-bottom:20px;
+   transition: 500ms;
 }
 
 .welcomeText {
@@ -361,6 +383,7 @@ nav {
    font-weight: 500;
    font-size: 16px;
    line-height: 1.6;
+   transition: 500ms;
 }
 
 .welcomeText button {
@@ -384,6 +407,18 @@ nav {
    background-color: black;
 }
 
+.progress-bar {
+   animation: grow 10s linear;
+   transform-origin: left;
+}
+
+
+@keyframes grow{
+   0%{
+     transform: scaleX(0);
+   }
+ }
+ 
 
 .top {
    height: 175px;
@@ -546,6 +581,7 @@ nav {
    font-weight: 700;
    color: rgb(0, 0, 0);
    text-shadow: 2px 0 3px rgba(0,0,0,0.8);
+   transition: 500ms ease;
 }
 
 .serviceContainer button {
@@ -585,7 +621,7 @@ nav {
    --bg-clr: #282828;
    --txt-clr: #ffffff;
    --btn-txt-clr: #333333;
-   --transition: all 0.5s;
+   --transition: all 0.5s ease;
 
    font-family: 'Poppins', sans-serif;
    height: 450px;
@@ -597,6 +633,7 @@ nav {
    overflow: hidden;
    background: var(--clr);
    transition: var(--transition);
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 .card__2 {
    --clr: #028DD1;
@@ -742,6 +779,8 @@ nav {
    gap: var(--_gap);
 }
 @media (min-width:720px){
+
+   
  .gallery {
      grid-template-columns: repeat(3,1fr);
  }
@@ -832,6 +871,7 @@ nav {
    font-size: 2.8rem;
    font-weight: 700;
    color: white;
+   transition: 500ms ease;
 }
 
 .bottomText {
@@ -850,6 +890,7 @@ nav {
    max-width: 700px;
    height:auto;
    font-weight: 500;
+   transition: 300ms ease;
 }
 
 .bottomText button {
@@ -1032,6 +1073,7 @@ footer img {
    text-align: center;
    padding-top: 70px;
    padding-bottom: 10px;
+   transition: 500ms ease;
 }
 
 .timelineProcess span {
@@ -1053,6 +1095,11 @@ footer img {
    background-color: black;
    padding:20px;
    max-width: 700px;
+   transition: 300ms ease;
+}
+
+.timelineSub p {
+   transition: 500ms ease;
 }
 
 .timeline h1 {
@@ -1303,6 +1350,7 @@ background-color: black;
 }
 
 
+
 #creator {
    width: 100%;
  background: rgb(0, 0, 0);
@@ -1315,12 +1363,186 @@ background-color: black;
 #creator a {
    text-decoration: none;
    font-size: 0.8rem;
-   background: #A548DF;
-   background: linear-gradient(to right, #863ab4 0%, #eb4aee 100%);
-   -webkit-background-clip: text;
-   background-clip: text;
-   -webkit-text-fill-color: transparent;
-   font-weight: 700;
+   color:  #585858;
+   font-weight: 600;
    transition: 300ms;
 }
+
+#creator a:hover {
+   color: white;
+}
+
+
+
+.blurry {
+   filter: blur(2px);
+   opacity: 0.5;
+}
+
+.unblurry {
+   filter: blur(0px);
+   opacity: 1;
+}
+
+.unblurred {
+   filter: blur(0px);
+   opacity: 1;
+   transform: scale(1);
+ 
+}
+
+
+.pricingContainer {
+   min-height: 600px;
+   background-color: rgb(19, 19, 19);
+   width: 100vw;
+   display: flex;
+   flex-direction: row;
+   position: relative;
+}
+
+
+.pricingContainer .pricingtext {
+   position: absolute;
+   top:10%;
+   left:50%;
+   transform: translate(-50%, -50%);
+}
+
+.pricingContainer h1 {
+   color: white;
+   font-size: 2.5rem;
+   text-align: center;
+   margin-top: 25px;
+   text-shadow: 1px rgba(0, 0, 0, 0.8);
+   width: 350px;
+}
+
+.pricingContainer p {
+   color: rgb(212, 212, 212);
+   font-size: 0.7rem;
+   text-align: center;
+   max-width: 300px;
+   background-color: rgb(19,19,19);
+}
+
+
+.pricingCard {
+   min-height: 450px;
+   max-height: 450px;
+   border-right: 2px solid rgb(150, 150, 150);
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 125px;
+}
+
+
+.selectContainer {
+  
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+
+}
+
+ .price {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 25px;
+   width: 50%;
+   min-height: 450px;
+   max-height: 450px;
+   margin-top: 100px;
+}
+
+.price #estimatePrice {
+   color: white;
+   font-size: 2rem;
+}
+
+.price #serviceCost {
+   color: rgb(212, 212, 212);
+   font-size: 1rem;
+}
+
+
+.selectContainer select {
+   width: 300px;
+   height: 35px;
+   padding-left: 20px;
+   font-size: 1rem;
+}
+
+.selectContainer input {
+   width: 300px;
+   height: 35px;
+   outline: none;
+   border: none;
+   padding-left: 20px;
+}
+
+
+.selectContainer  label {
+   color: white;
+   text-align: left;
+   font-size: 1.3rem;
+}
+
+.selectContainer button {
+   background-color: #028DD1;
+   color: black;
+   outline: none;
+   border: 2px solid #028DD1;
+   font-size: 0.9rem;
+   padding:5px;
+   font-weight: 600;
+   cursor: pointer;
+   border-radius: 25px;
+   transition: 300ms ease;
+}
+
+.selectContainer button:hover {
+   color: #ffffff;
+}
+
+
+@media(max-width:750px) {
+   .pricingContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .pricingCard {
+      border:none;
+      width: 100%;
+   }
+
+   .price {
+      width: 100%;
+      margin-top: -100px;
+   }
+
+   .pricingtext p {
+      margin-left: 25px;
+   }
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
