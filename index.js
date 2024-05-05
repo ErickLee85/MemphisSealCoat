@@ -290,7 +290,6 @@ if (serviceSelection === 'lineStriping') {
 //     event.target.value = value.replace(/\D/g, '');
 // });
 
-
 // const estimateCost = () => {
 //     var serviceSelection = document.getElementById("serviceSelection").value;
 //     var footageInput = document.getElementById("footageInput").value;
