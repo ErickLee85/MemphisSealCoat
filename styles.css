@@ -293,11 +293,11 @@ nav {
    color: black;
 }
 
-.heroSection button:hover {
+/* .heroSection button:hover {
    background:linear-gradient(to bottom right, black, black);
    color: rgb(38, 169, 230);
  
-}
+} */
 
 @media(max-width: 600px) {
    .heroSection {
