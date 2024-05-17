@@ -75,11 +75,17 @@
             padding: 20px;
             margin: 7px;
             width: 300px;
+            height: 330px;
+            max-height:330px;
             background: rgb(238, 238, 238);
             opacity: 1;
             box-shadow: 0 0px 10px rgba(0,0,0,0.4);
             cursor: pointer;
             transition: 300ms ease;
+        }
+
+        .card:last-child {
+            overflow: scroll;
         }
 
     
@@ -88,7 +94,7 @@
         .card h2 {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            color: #575757;
+            color: #2b2b2b;
         }
         .card p {
             font-size: 1rem;
@@ -119,10 +125,10 @@
 
         .titleContainer p {
             text-align: center;
-            color: #575757;
+            color: #000000;
         }
 
-        .promotional button {
+        .promotional button{
         padding:10px 25px;
         font-weight: 700;
         outline: none;
@@ -144,13 +150,40 @@
         background-color: black;
         }
 
+        .card button {
+            margin-top: 20px;
+            padding:10px 25px;
+        font-weight: 700;
+        outline: none;
+        border:none;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        border-radius: 25px;
+        cursor: pointer;
+        width: 100%;
+        letter-spacing: 1px;
+        border: 2px solid goldenrod;
+        background-color: goldenrod;
+        transition: 500ms ease-in-out;
+        color: black;
+        }
+
+        .card button:hover {
+            color: goldenrod;
+        background-color: black;
+        }
+
    
 
         
         @media (max-width: 768px) {
 
+
+            .card {
+                height:auto;
+            }
+
             .card:hover {
-                filter: brightness(1.2);
+                filter: brightness(1.1);
             }
             .card {
                 width: calc(100% - 20px);
@@ -163,13 +196,225 @@
 
         @media(min-width: 768px) {
             .card:hover {
-            transform: scale(1.1);
-            z-index: 100;
-            filter: brightness(1.2);
+            transform: scale(1.05);
+            z-index: 50;
+            
         }
 
      
         }
+
+
+     
+
+      .bollardModal {
+            display: none;
+            position: fixed;
+            top: 55%;
+            left: -100%;
+            transform: translate(-50%, -50%);
+            min-width: 700px;
+            max-width: 700px;
+            min-height: 500px;
+            background: white;
+            border-radius: 15px;
+            z-index: 80;
+            padding: 25px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+            animation: slide-right 1000ms forwards; 
+        } 
+
+@keyframes slide-right {
+    from {
+        left: -100%; /* Start from the right */
+    }
+    to {
+        left: 50%; /* Slide to the center */
+    }
+}
+
+
+        .circle {
+            position: absolute;
+            top:0;
+            right:0;
+            height: 100%;
+            width: 100%;
+            background:goldenrod;
+            clip-path: circle(50% at right -20%);
+            border-top-right-radius: 15px;
+        }
+
+
+
+        #bollardTitle {
+            font-size: 2rem;
+            font-weight: 700;
+            position: absolute;
+            top:40px;
+            right: 30px;
+            z-index: 10;
+            color: white;
+        }
+
+        #mobileDivider {
+            display: none;
+        }
+
+        .bollardModal h4 {
+            font-size: 0.9rem;
+            padding-block: 5px;
+        }
+
+        .bollardModal h4::before {
+            content: '✓';
+            padding-right: 10px;
+        }
+
+        .bollardModal p {
+            font-size: 0.8rem;
+        }
+  
+        .closeBollard {
+            position: absolute;
+            right: 10px;
+            bottom:10px;
+            height: 35px;
+            width: 75px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            border: 1px solid #028DD1;;
+            background-color: #028DD1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            font-weight: 600;
+            transition: 300ms ease;
+        }
+
+        .closeBollard:hover {
+            background-color: white;
+            color: #028DD1;
+        }
+
+        #mobileTitle {
+            display: none;
+        }
+
+        
+        .modalContainer {
+            display: none;
+            inset:0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            position: fixed;
+        }
+
+        
+
+        @media (max-width: 700px) {
+     
+            br {
+                display: none;
+            }
+          
+        .bollardModal {
+            /* position:relative; */
+            min-width: auto; 
+            max-width: 100%; 
+            width: 100%; 
+            min-height: auto; 
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            padding-inline: 15px;
+            padding-block: 5px;
+            border-radius: 0px;
+            padding-bottom: 25px;
+            z-index: 10000;
+            overflow-y: auto;
+        }
+
+    
+        
+
+        .circle {
+           display: none;
+        }
+
+        #bollardTitle {
+            font-size: 1.2rem;
+            display: none;
+        }
+        
+        #mobileDivider {
+            display: block;
+            height: 1.5px;
+            width: 0;
+            background-color: goldenrod; 
+            margin-bottom: 10px;
+            animation: grow 5000ms forwards;
+        }
+
+        @keyframes grow {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .closeBollard {
+            position: absolute; /* Keep absolute positioning */
+            top: 10px;
+            right: 10px;
+        }
+        #mobileTitle {
+            display: block;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: goldenrod;
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+            margin-bottom: 15px;
+        }
+        }
+
+        @media(max-height:850px) {
+            br {
+                display: none;
+            }
+            .bollardModal p {
+            font-size: 0.8rem;
+         }
+
+         .bollardModal h4 {
+            font-size: 0.9rem;
+         }
+        }
+
+       
+
+
+
+        @media(max-height: 740px) {
+            br {
+                display: none;
+            }
+         .bollardModal p {
+            font-size: 0.65rem;
+         }
+
+         .bollardModal h4 {
+            font-size: 0.7rem;
+         }
+        }
+        
 
    
     </style>
@@ -177,7 +422,7 @@
 </head>
 <body>
             
-    <nav  id="home" style="z-index: 1000;">
+    <nav  id="home" style="z-index: 100;">
         <div class="topnav" id="theTopNav" >
             <i class="fa-solid fa-bars-staggered faMenu"></i>
             <a href="./index.html"><img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="120"  width="150" class="logo" style="cursor: pointer;" ></a>
@@ -221,7 +466,7 @@
      
             <div class="titleText">
                 <h3>Smooth Surfaces & Stronger Streets</h3>
-                    <p>Revitalize Your Roads with The Experts <i class="fa-solid fa-check" style="margin-left: 10px; color: goldenrod;"></i></p>
+                    <p style="color: rgb(116, 116, 116);">Revitalize Your Roads with The Experts <i class="fa-solid fa-check" style="margin-left: 10px; color: goldenrod;"></i></p>
             </div>
 
             </div>
@@ -280,13 +525,52 @@
             <h2>Clearing and Cleaning Parking Lots</h2>
             <p>Cleaning parking lots with various equipment to improve aesthetics and professionalism, and to enhance the likelihood of client visits.</p>
         </div>
+        <div class="card">
+            <i class="fas fa-shield-alt icon"></i>
+            <h2>Professional Bollard Installation Services</h2>
+            <p>Enhance the safety and aesthetics of your property with our expert bollard installation services. Our team specializes in the strategic placement 
+                and secure installation of a variety of bollards tailored to meet your specific safety and design requirements.</p>
+                <button onclick="activateModal()">Our Process <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button>
+        </div>
       
     </div>
 
     <div class="promotional">
         <a href="contact.html">       <button>Get Free Quote <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button></a>
     </div>
- 
+
+
+   
+        <div class="bollardModal">
+            <button class="closeBollard" onclick="closeBollard()">
+                Close
+            </button>
+            <div class="circle"></div>
+            <p id="bollardTitle">Our Process</p>
+            <p id="mobileTitle">Our Process</p>
+            <div id="mobileDivider"></div>
+            <h4>Consultation and Site Assessment</h4>
+            <p> We begin with a thorough assessment of your site to determine<br> the optimal placement and type of bollards that best suit your <br>needs.
+                 Whether it's for traffic control, security, or aesthetic purposes,<br>  we ensure that our solutions meet your objectives.</p>
+    
+            <h4>Selection of Bollards</h4>
+            <p>We offer a wide range of bollards, including fixed, removable, and retractable <br>options in various materials such as steel and concrete.
+                    Our team will help you choose <br>the right bollards that align with your security requirements and environmental conditions.</p>
+            <h4>Precision Installation</h4>
+            <p>Our skilled technicians use state-of-the-art equipment to mark and excavate the designated areas, ensuring minimal disruption to
+                    your property. We handle all aspects of the installation, from preparing foundations to the placement and setting of bollards, 
+                    ensuring a seamless and secure fit.</p>
+            <h4>Finishing and Cleanup</h4>
+            <p> After installation, we conduct a meticulous cleanup of the site and provide finishing touches to the bollards to enhance their 
+                appearance and durability. We also offer custom color options to match your landscape or branding.</p>
+                <h4>Safety Inspection and Final Walk-Through</h4>
+                <p> Post-installation, we perform a rigorous safety inspection to ensure that all bollards are installed correctly and function
+                     as intended. We provide a final walkthrough with our clients to guarantee satisfaction.</p>
+                <h4>Why Choose Us?</h4>
+                <p>Expertise & Experience</p>
+        </div>
+   
+
 
     
     <footer>
@@ -326,6 +610,17 @@
 
     
         <div class="overlay"></div>
+        <script>
+            const bollardModal = document.querySelector('.bollardModal');
+
+            const closeBollard = () => {
+                bollardModal.style.display = 'none';
+            }
+
+            const activateModal = () => {
+                bollardModal.style.display = 'block';
+            }
+        </script>
       <script   src="./serviceScript.js"></script>
 
       <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
