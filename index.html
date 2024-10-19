@@ -88,6 +88,20 @@
    background-color: rgba(0, 0, 0, 0.5);
 }
 
+.image-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: goldenrod;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 2; /* Ensure the label is on top of the image */
+}
+
 </style>
 <body>
             
@@ -236,6 +250,7 @@
   <span class="close">&times;</span>
   <img class="modal-content" id="modal-img">
   <!-- Left and Right Navigation Arrows -->
+  <div class="image-label" id="imageLabel"></div>
   <span class="prev">&#10094;</span>
   <span class="next">&#10095;</span>
 </div>
@@ -622,14 +637,14 @@ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChlmPj8_vsGHbVHzzHhBF1
 </script>
 
 <script>
-  const spans = document.querySelectorAll('.img-span');
+const spans = document.querySelectorAll('.img-span');
 let currentIndex = 0;
 
 document.querySelectorAll('.img-span').forEach((item, index) => {
     item.addEventListener('click', function() {
         const screenWidth = window.innerWidth; 
 
-        if(screenWidth < 792) {
+        if (screenWidth < 792) {
             return false;
         }
         currentIndex = index; 
@@ -640,52 +655,76 @@ document.querySelectorAll('.img-span').forEach((item, index) => {
 function openModalWithImage(imageUrl) {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
-    
+    const imageLabel = document.getElementById('imageLabel'); // Label for Before/After
+
     modal.style.display = "flex"; 
-    modalImg.style.opacity = 0;
+    modalImg.style.opacity = 0; 
     modalImg.src = imageUrl;      
+    updateImageLabel(imageUrl); // Update label for Before/After
 
     setTimeout(() => {
         modalImg.style.opacity = 1; 
     }, 10);  
 }
 
+// Close the modal when user clicks the close button
 document.querySelector('.close').addEventListener('click', function() {
     const modalImg = document.getElementById('modal-img');
-    modalImg.style.opacity = 0; 
+    modalImg.style.opacity = 0;
     setTimeout(() => {
-        document.getElementById('image-modal').style.display = "none"; 
-    }, 300); 
+        document.getElementById('image-modal').style.display = "none";
+    }, 300);
 });
 
+// Navigate to the previous image
 document.querySelector('.prev').addEventListener('click', function() {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : spans.length - 1;
     navigateToImage(currentIndex);
 });
 
+// Navigate to the next image
 document.querySelector('.next').addEventListener('click', function() {
     currentIndex = (currentIndex < spans.length - 1) ? currentIndex + 1 : 0;
     navigateToImage(currentIndex);
 });
 
+// Function to navigate to a specific image and update label
 function navigateToImage(index) {
     const modalImg = document.getElementById('modal-img');
-    modalImg.style.opacity = 0; // Fade out the current image
     const imageUrl = spans[index].getAttribute('data-image');
+    modalImg.style.opacity = 0;
 
     setTimeout(() => {
-        modalImg.src = imageUrl;  
+        modalImg.src = imageUrl;
+        updateImageLabel(imageUrl); // Update label for Before/After
         modalImg.onload = () => {
             setTimeout(() => {
-                modalImg.style.opacity = 1; 
-            }, 10); 
+                modalImg.style.opacity = 1;
+            }, 10);
         };
     }, 300); 
 }
 
+// Function to update the label (Before/After) based on image URL
+function updateImageLabel(imageUrl) {
+    const imageLabel = document.getElementById('imageLabel');
+    if (imageUrl.includes("before")) {
+        imageLabel.textContent = "Before";
+        imageLabel.style.display = "block";
+    } else if (imageUrl.includes("after")) {
+        imageLabel.textContent = "After";
+        imageLabel.style.display = "block";
+    } else {
+        imageLabel.style.display = "none"; // Hide label if no match
+    }
+}
+
+// Close modal when clicking outside the modal content
 document.querySelector('.overlay').addEventListener('click', () => {
     document.getElementById('image-modal').style.display = "none";
 });
+
+
 </script>
     
 </body>
