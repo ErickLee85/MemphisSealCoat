@@ -1619,6 +1619,7 @@ background-color: black;
    min-width: 300px;
    border: 1px solid gainsboro;
    border-radius: 0.5rem;
+   cursor:default;
  }
 
  .img-span:nth-child(1) {
