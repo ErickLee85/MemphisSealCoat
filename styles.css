@@ -1621,7 +1621,7 @@ background-color: black;
    min-height: 300px;
    min-width: 300px;
    border-radius: 0.5rem;
-   cursor:default;
+   cursor:pointer;
  }
 
  .img-span:nth-child(1) {
@@ -1675,6 +1675,7 @@ background-color: black;
    background-image: url('./assets/after_1.jpg');
    background-size: cover;
  }
+
 
  @media(max-width:1150px) {
    .brims-image-grid {

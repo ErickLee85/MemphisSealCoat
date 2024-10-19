@@ -323,6 +323,71 @@ function sliderMouseLeave() {
   if(isSliderLocked) isSliderLocked = false;
 }
 
+// const spans = document.querySelectorAll('.img-span');
+// let currentIndex = 0;
+
+// document.querySelectorAll('.img-span').forEach((item, index) => {
+//     item.addEventListener('click', function() {
+//         const screenWidth = window.innerWidth; 
+
+//         if(screenWidth < 792) {
+//             return false;
+//         }
+//         currentIndex = index; 
+//         openModalWithImage(spans[currentIndex].getAttribute('data-image'));
+//     });
+// });
+
+// function openModalWithImage(imageUrl) {
+//     const modal = document.getElementById('image-modal');
+//     const modalImg = document.getElementById('modal-img');
+    
+//     modal.style.display = "flex"; 
+//     modalImg.style.opacity = 0;
+//     modalImg.src = imageUrl;      
+
+//     setTimeout(() => {
+//         modalImg.style.opacity = 1; 
+//     }, 10);  
+// }
+
+// document.querySelector('.close').addEventListener('click', function() {
+//     const modalImg = document.getElementById('modal-img');
+//     modalImg.style.opacity = 0; 
+//     setTimeout(() => {
+//         document.getElementById('image-modal').style.display = "none"; 
+//     }, 300); 
+// });
+
+// document.querySelector('.prev').addEventListener('click', function() {
+//     currentIndex = (currentIndex > 0) ? currentIndex - 1 : spans.length - 1;
+//     navigateToImage(currentIndex);
+// });
+
+// document.querySelector('.next').addEventListener('click', function() {
+//     currentIndex = (currentIndex < spans.length - 1) ? currentIndex + 1 : 0;
+//     navigateToImage(currentIndex);
+// });
+
+// function navigateToImage(index) {
+//     const modalImg = document.getElementById('modal-img');
+//     modalImg.style.opacity = 0; // Fade out the current image
+//     const imageUrl = spans[index].getAttribute('data-image');
+
+//     setTimeout(() => {
+//         modalImg.src = imageUrl;  
+//         modalImg.onload = () => {
+//             setTimeout(() => {
+//                 modalImg.style.opacity = 1; 
+//             }, 10); 
+//         };
+//     }, 300); 
+// }
+
+// document.querySelector('.overlay').addEventListener('click', () => {
+//     document.getElementById('image-modal').style.display = "none";
+// });
+
 // document.getElementById("footageInput").addEventListener("keyup", function(event) {
 //     if (event.key === 'Enter') {
 //         event.preventDefault();

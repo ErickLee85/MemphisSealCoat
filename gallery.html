@@ -100,25 +100,25 @@
         }
         
         .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 50px;
-        left: 0;
-        top: 120px;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.85);
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
-        margin: auto;
-        display: block;
-        max-width:75%;
-        height: 75%;
-        object-fit: contain;
-        border-radius: 15px;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 0.5rem;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
         }
 
         .close {
@@ -163,6 +163,32 @@
         .promotional button:hover {
         color: goldenrod;
         background-color: black;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            user-select: none;
+            transition: 0.3s;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
    
@@ -261,6 +287,8 @@
         <div id="myModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="modalImg">
+            <span class="prev">&#10094;</span> <!-- Left arrow -->
+            <span class="next">&#10095;</span> <!-- Right arrow -->
           </div>
 
            
@@ -308,38 +336,50 @@
         <div class="overlay"></div>
       <script   src="./serviceScript.js"></script>
       <script>
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("modalImg");
-        var screenWidth = window.innerWidth;
-        console.log(typeof(screenWidth));
+          var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImg");
+var images = document.querySelectorAll(".grid img");
+var currentIndex = 0; // Track the current image index
 
-        // Get all images within the grid
-        var images = document.querySelectorAll(".grid img");
+// Open modal and display clicked image with transition
+images.forEach(function(img, index) {
+    img.addEventListener("click", function() {
+        currentIndex = index; // Set current image index
+        modal.style.display = "flex";
+        modalImg.style.opacity = 0; // Set opacity to 0 before changing the image
+        setTimeout(() => {
+            modalImg.src = this.src; // Change image source
+            modalImg.style.opacity = 1; // Fade in the image
+        }, 100); // Small delay to ensure the opacity transition works
+    });
+});
 
-        // Loop through each image and add an event listener for click
-        images.forEach(function(img) {
-        img.addEventListener("click", function() {
-           
-            if(screenWidth < 792) {
-                return false;
-            }
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        });
-        });
+// Close the modal
+document.querySelector('.close').onclick = function() {
+    modal.style.display = "none";
+};
 
+// Navigate to the previous image
+document.querySelector('.prev').addEventListener('click', function() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    updateModalImage();
+});
 
-        window.addEventListener('resize', () => {
-            screenWidth = window.innerWidth;
-        })
+// Navigate to the next image
+document.querySelector('.next').addEventListener('click', function() {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    updateModalImage();
+});
 
-    
+// Function to update the image in the modal with transition
+function updateModalImage() {
+    modalImg.style.opacity = 0; // Fade out the current image
+    setTimeout(() => {
+        modalImg.src = images[currentIndex].src; // Change to the new image
+        modalImg.style.opacity = 1; // Fade in the new image
+    }, 300); // Match the delay to the opacity transition time
+}
 
-        // When the user clicks on <span> (x), close the modal
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-        modal.style.display = "none";
-        };
       </script>
 
 <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
