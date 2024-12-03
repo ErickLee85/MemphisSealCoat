@@ -9,109 +9,43 @@ var mainLinks = document.querySelectorAll('.mainLinks li a');
 var sideLinks = document.querySelectorAll('.sideLinks li a')
 var bottomLinks = document.querySelectorAll('.linkHolder li a')
 
-// mainLinks.forEach(function(link) {
-//     link.addEventListener('click', function(event) {
-//         var hrefValue = this.getAttribute('href');
-      
-//         event.preventDefault();
-//         if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html' || hrefValue == 'gallery.html') {
-//             window.location.href = hrefValue;
-//         }
-//         var targetElement = document.querySelector(hrefValue);
-//         var offset = targetElement.offsetTop - 85; 
-        
-//         // Scroll to the target element with offset
-//         window.scrollTo({
-//             top: offset,
-//             behavior: 'smooth' // Optional: Smooth scrolling
-//         });
-//         mainLinks.forEach(function(link) {
-//             if (link !== this) { // Skip if it's the clicked link
-//                 link.classList.remove('active');
-//             }
-//         });
-
-//         // Add the 'active' class to the clicked link
-//         this.classList.add('active');
-//     });
-// });
-
-// sideLinks.forEach(function(link) {
-//     link.addEventListener('click', function(event) {
-//         var hrefValue = this.getAttribute('href');
-      
-//         event.preventDefault();
-//         if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html' || hrefValue == 'gallery.html') {
-//             window.location.href = hrefValue;
-//         }
-//         var targetElement = document.querySelector(hrefValue);
-//         var offset = targetElement.offsetTop - 85; 
-        
-//         // Scroll to the target element with offset
-//         window.scrollTo({
-//             top: offset,
-//             behavior: 'smooth' // Optional: Smooth scrolling
-//         });
-//         mainLinks.forEach(function(link) {
-//             if (link !== this) { // Skip if it's the clicked link
-//                 link.classList.remove('active');
-//             }
-//         });
-
-//         // Add the 'active' class to the clicked link
-//         this.classList.add('active');
-//     });
-// });
-
-// bottomLinks.forEach(function(link) {
-//     link.addEventListener('click', function(event) {
-//         var hrefValue = this.getAttribute('href');
-      
-//         event.preventDefault();
-//         if(hrefValue == '#' || hrefValue == 'contact.html' || hrefValue == 'about.html' || hrefValue == 'services.html' || hrefValue == 'gallery.html') {
-//             window.location.href = hrefValue;
-//         }
-//         var targetElement = document.querySelector(hrefValue);
-//         var offset = targetElement.offsetTop - 85; 
-        
-//         // Scroll to the target element with offset
-//         window.scrollTo({
-//             top: offset,
-//             behavior: 'smooth' // Optional: Smooth scrolling
-//         });
-//         mainLinks.forEach(function(link) {
-//             if (link !== this) { // Skip if it's the clicked link
-//                 link.classList.remove('active');
-//             }
-//         });
-
-//         // Add the 'active' class to the clicked link
-//         this.classList.add('active');
-//     });
-// });
 
 menuIcon.addEventListener('click', () => {
-   sideNav.classList.add('sideNavActive')
-   overlay.classList.add('activeOverlay')
-})
+    sideNav.style.visibility = 'visible';
+    // Use setTimeout to ensure visibility is set before adding width
+    setTimeout(() => {
+        sideNav.classList.add('sideNavActive');
+    }, 10);
+    overlay.classList.add('activeOverlay');
+});
 
 closeSideNav.addEventListener('click', () => {
-    sideNav.classList.remove('sideNavActive')
-    overlay.classList.remove('activeOverlay')
- 
-})
+    sideNav.classList.remove('sideNavActive');
+    // Wait for width transition to complete before hiding
+    setTimeout(() => {
+        sideNav.style.visibility = 'hidden';
+    }, 300); // Match this to your transition duration
+    overlay.classList.remove('activeOverlay');
+});
 
 overlay.addEventListener('click', () => {
-    sideNav.classList.remove('sideNavActive')
-    overlay.classList.remove('activeOverlay')
-})
+    sideNav.classList.remove('sideNavActive');
+    setTimeout(() => {
+        sideNav.style.visibility = 'hidden';
+    }, 300);
+    overlay.classList.remove('activeOverlay');
+});
 
 
 
 links.forEach(function(link) {
   link.addEventListener("click", () => {
-    sideNav.classList.remove('sideNavActive')
-    overlay.classList.remove('activeOverlay')
+    sideNav.classList.remove('sideNavActive');
+    // Wait for width transition to complete before hiding
+    setTimeout(() => {
+        sideNav.style.visibility = 'hidden';
+    }, 300); // Match this to your transition duration
+    overlay.classList.remove('activeOverlay');
   });
 });
 

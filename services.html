@@ -323,25 +323,64 @@
                 display: none;
             }
           
-        .bollardModal {
-            /* position:relative; */
-            min-width: auto; 
-            max-width: 100%; 
-            width: 100%; 
-            min-height: auto; 
-            top: 50%;
-            left: 50%; 
-            transform: translate(-50%, -50%);
-            padding-inline: 15px;
-            padding-block: 5px;
-            border-radius: 0px;
-            padding-bottom: 25px;
-            z-index: 10000;
-            overflow-y: auto;
-        }
+            .bollardModal {
+        position: fixed; /* Changed from relative */
+        top: 0;         /* Add this */
+        left: 0;        /* Add this */
+        width: 100vw;   /* Changed from 100% to viewport width */
+        height: 100vh;  /* Changed from min-height to viewport height */
+        margin: 0;
+        padding: 20px;  /* Adjusted padding */
+        border-radius: 0;
+        z-index: 10000;
+        overflow-y: auto;
+        background: white;
+        transform: none; /* Remove the transform */
+        animation: none; /* Remove the slide animation since we want it to be full screen */
+        padding: 60px 20px 20px;  /* Added top padding for close button */
+    }
 
+    /* Ensure the modal container is also properly positioned */
+    .modalContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.5); /* Optional: adds an overlay */
+    }
     
+    .closeBollard {
+        position: fixed; /* Change to fixed to keep it in view */
+        top: 20px;      /* Position from top instead of bottom */
+        right: 20px;
+        height: 35px;
+        width: 75px;
+        z-index: 10001;  /* Ensure it's above the modal content */
+    }
         
+    .bollardModal p {
+        white-space: normal;    /* Ensure text wraps */
+        width: 100%;           /* Full width */
+        word-wrap: break-word; /* Break long words if needed */
+        max-width: calc(100vw - 40px); /* Account for padding */
+        margin: 0;            /* Reset margins */
+        padding: 0;           /* Reset padding */
+    }
+
+    .bollardModal h4 {
+        white-space: normal;
+        width: 100%;
+        word-wrap: break-word;
+        max-width: calc(100vw - 40px);
+        margin: 15px 0 10px 0;  /* Add some vertical spacing */
+    }
+
+    /* Remove any line breaks */
+    br {
+        display: none;
+    }
 
         .circle {
            display: none;
@@ -370,11 +409,6 @@
             }
         }
 
-        .closeBollard {
-            position: absolute; /* Keep absolute positioning */
-            top: 10px;
-            right: 10px;
-        }
         #mobileTitle {
             display: block;
             font-size: 1.7rem;
@@ -384,18 +418,6 @@
             margin-bottom: 15px;
         }
         }
-
-        @media(max-height:850px) {
-          
-            .bollardModal p {
-            font-size: 0.8rem;
-         }
-
-         .bollardModal h4 {
-            font-size: 0.9rem;
-         }
-        }
-
        
 
 
@@ -430,14 +452,19 @@
                               <li class="mainLink"><a href="about.html">About</a></li>
             </ul>
             <div class="contact">
-                <ul>
+                <ul style=" display: flex; align-items: center;">
                     <li><a href="tel:19016199897">(901) 619-9897</a></li>
-                    <li><a href="mailto:Nick@memphissealcoat.com"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="mailto:Nick@memphissealcoat.com">
+                      <svg data-slot="icon" aria-hidden="true" fill="none" height="35px" stroke-width="1.2" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="sideNav">
+        <img src="./assets/Memphis Sealcoat LLC-01-trans.png" alt="logo" height="100"  width="200" class="logo" style="object-fit: contain; margin: 0 auto;" >
         <ul class="sideLinks">
             <li class="sideLink"><a href="index.html"><i class="fa-solid fa-home"></i>Home</a></li>
             <li class="sideLink"><a href="services.html"><i class="fa-solid fa-briefcase"></i>Services</a></li>
